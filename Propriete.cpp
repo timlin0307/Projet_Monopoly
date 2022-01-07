@@ -10,6 +10,16 @@
 using namespace std;
 #include "Propriete.h"
 
+Propriete :: Propriete(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque ) /* on ne met pas Case casesuiv dans le constructeur ? */
+: Case(nomcase)
+{
+	this -> loyer = loyer;
+	prixAchat = prixachat;
+	nom_joueur = nomjoueur;
+	val_hypotheque = valhypo;
+	this -> hypotheque = hypotheque;
+}
+
 void Propriete :: setLoyer(int loyer)
 {
 	this -> loyer = loyer;

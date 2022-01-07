@@ -15,8 +15,7 @@ using namespace std;
 /* herite de propriete
  * protected : nom de la case
  *
- * public : arreterSur()
- * getNom
+ * public : getNom
  * setNom
  *
  */
@@ -27,7 +26,9 @@ protected :
 	/* rien à mettre on herite de propriete */
 
 public :
-	/* rien à mettre on herite de propriete */
+	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false);
+	void arreterSur(int);
+	void calcul_loyer(int de);
 
 
 };
