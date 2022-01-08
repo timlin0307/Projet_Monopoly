@@ -16,6 +16,7 @@ private :
 public :
 	jeu();
 	int compteur();
+	int getNbjoueurs();
 	void setNbjoueurs(int nb_joueurs);
 };
 
