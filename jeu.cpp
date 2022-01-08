@@ -24,6 +24,10 @@ int jeu::compteur(){
 	return tourdejeu;
 }
 
+int jeu::getNbjoueurs(){
+	return nb_joueurs;
+}
+
 void jeu::setNbjoueurs(int nb_joueurs){
 	this->nb_joueurs=nb_joueurs;
 }
