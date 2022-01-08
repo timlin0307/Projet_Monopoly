@@ -19,6 +19,7 @@ private:
 public:
 	Chance(string);
 	string piocher();
+	//virtual void arreterSur() override;
 };
 
 

@@ -61,3 +61,30 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	Chance::ecriture(newTab);
 	return tab[0];
 }
+
+/*void arreterSur() {
+	cout << "fonction dérivée";
+	string ligne = Chance::piocher();
+		
+	string sep = "-";
+	vector<string> words{};
+	size_t pos;
+	while ((pos = ligne.find(sep)) != string::npos) {// tant qu'on trouve un caractère séparateur
+		words.push_back(ligne.substr(0, pos));		// comme un append
+		ligne.erase(0, pos + sep.length());			// on supprime ce qui a déjà été examiné
+	}
+		
+	string type = words[0];
+	switch (type) {
+	case "PION":
+		break;
+	case "GAIN":
+		break;
+	case "LIBERE":
+		break;
+	case "PERTE":
+		break;
+	case "REPARATION":
+		break;
+	}
+}*/

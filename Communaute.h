@@ -19,6 +19,7 @@ private:
 public:
 	Communaute(string);
 	string piocher();
+	//virtual void arreterSur() override;
 };
 
 

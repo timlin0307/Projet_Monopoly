@@ -1,16 +1,16 @@
-Allez en prison
-Payez pour frais de scolarité
-Vous avez gagné le prix de mots croisés
-Rendez vous à  l'Avenue Henri-Martin
-Rendez vous à  la Rue de la Paix
-Reculez de trois cases
-Faites des réparations dans toutes vos maisons
-Amende pour excès de vitesse
-Allez à  la gare de Lyon
-Avancez jusqu'à  la case Départ
-Vous êtes libéré de prison
-Vous êtes imposé pour les réparations de voirie
-La Banque vous verse un dividende
-Amende pour ivresse
-Avancez au Boulevard de la Villette
-Votre immeuble et votre prêt rapportent
+REPARATION-Faites des réparations dans toutes vos maisons
+PION-Avancez jusqu'à  la case Départ
+PERTE-Amende pour excès de vitesse
+PION-Allez à  la gare de Lyon
+LIBERE-Vous êtes libéré de prison
+GAIN-Votre immeuble et votre prêt rapportent
+PION-Avancez au Boulevard de la Villette
+PERTE-Payez pour frais de scolarité
+REPARATION-Vous êtes imposé pour les réparations de voirie
+PION-Rendez vous à  la Rue de la Paix
+PERTE-Amende pour ivresse
+GAIN-Vous avez gagné le prix de mots croisés
+PION-Allez en prison
+PION-Rendez vous à  l'Avenue Henri-Martin
+PION-Reculez de trois cases
+GAIN-La Banque vous verse un dividende

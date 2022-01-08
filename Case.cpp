@@ -14,10 +14,6 @@ Case::Case(string nom) {
 	this->suivante = nullptr;
 }
 
-void arreterSur() {
-	
-}
-
 string Case::getNom() {
 	return nom;
 }
