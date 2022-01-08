@@ -1,40 +1,40 @@
-Départ
-Boulevard de Belleville
-Caisse de communauté
-Rue Lecourbe
-Impôts sur le revenu
-Gare Montparnasse
-Rue de Vaugirard
-Chance
-Rue de Courcelles
-Avenue de la République
-Prison
-Boulevard de la Villette
-Compagnie de distribution d'électricité
-Avenue de Neuilly
-Rue de Paradis
-Gare de Lyon
-Avenue Mozart
-Caisse de communauté
-Boulevard Saint-Michel
-Place Pigalle
-Parc gratuit
-Avenue Matignon
-Chance
-Boulevard Malesherbes
-Avenue Henri-Martin
-Gare du Nord
-Faubourg Saint-Honoré
-Place de la Bourse
-Compagnie de distribution des eaux
-Rue Lafayette
-Allez en prison
-Avenue de Breteuil
-Avenue Foch
-Caisse de communauté
-Boulevard des Capucines
-Gare Saint-Lazare
-Chance
-Avenue des Champs-Elysées
-Taxe de luxe
-Rue de la Paix
+DEPART-Départ
+TERRAIN-Boulevard de Belleville
+COMMUNAUTE-Caisse de communauté
+TERRAIN-Rue Lecourbe
+TAXE-Impôts sur le revenu
+GARE-Gare Montparnasse
+TERRAIN-Rue de Vaugirard
+CHANCE-Chance
+TERRAIN-Rue de Courcelles
+TERRAIN-Avenue de la République
+PRISON-Prison
+TERRAIN-Boulevard de la Villette
+COMPAGNIE-Compagnie de distribution d'électricité
+TERRAIN-Avenue de Neuilly
+TERRAIN-Rue de Paradis
+GARE-Gare de Lyon
+TERRAIN-Avenue Mozart
+COMMUNAUTE-Caisse de communauté
+TERRAIN-Boulevard Saint-Michel
+TERRAIN-Place Pigalle
+GRATUIT-Parc gratuit
+TERRAIN-Avenue Matignon
+CHANCE-Chance
+TERRAIN-Boulevard Malesherbes
+TERRAIN-Avenue Henri-Martin
+GARE-Gare du Nord
+TERRAIN-Faubourg Saint-Honoré
+TERRAIN-Place de la Bourse
+COMPAGNIE-Compagnie de distribution des eaux
+TERRAIN-Rue Lafayette
+ARRESTATION-Allez en prison
+TERRAIN-Avenue de Breteuil
+TERRAIN-Avenue Foch
+COMMUNAUTE-Caisse de communauté
+TERRAIN-Boulevard des Capucines
+GARE-Gare Saint-Lazare
+CHANCE-Chance
+TERRAIN-Avenue des Champs-Elysées
+TAXE-Taxe de luxe
+TERRAIN-Rue de la Paix

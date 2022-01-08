@@ -1,16 +1,16 @@
-La Banque vous verse un dividende
-Amende pour excÃ¨s de vitesse
-Vous Ãªtes imposÃ© pour les rÃ©parations de voirie
-Amende pour ivresse
-Avancez jusqu'Ã  la case DÃ©part
-Avancez au Boulevard de la Villette
 Allez en prison
-Vous avez gagnÃ© le prix de mots croisÃ©s
-Rendez vous Ã  l'Avenue Henri-Martin
-Payez pour frais de scolaritÃ©
-Rendez vous Ã  la Rue de la Paix
-Allez Ã  la gare de Lyon
-Votre immeuble et votre prÃªt rapportent
-Vous Ãªtes libÃ©rÃ© de prison
-Faites des rÃ©parations dans toutes vos maisons
+Payez pour frais de scolarité
+Vous avez gagné le prix de mots croisés
+Rendez vous à  l'Avenue Henri-Martin
+Rendez vous à  la Rue de la Paix
 Reculez de trois cases
+Faites des réparations dans toutes vos maisons
+Amende pour excès de vitesse
+Allez à  la gare de Lyon
+Avancez jusqu'à  la case Départ
+Vous êtes libéré de prison
+Vous êtes imposé pour les réparations de voirie
+La Banque vous verse un dividende
+Amende pour ivresse
+Avancez au Boulevard de la Villette
+Votre immeuble et votre prêt rapportent

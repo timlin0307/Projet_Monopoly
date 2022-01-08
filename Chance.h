@@ -1,25 +1,27 @@
 /*
- * Communaute.h
+ * Chance.h
  *
- *  Created on: 22 déc. 2021
+ *  Created on: 8 janv. 2022
  *      Author: neyre
  */
 
-#ifndef COMMUNAUTE_H_
-#define COMMUNAUTE_H_
+#ifndef CHANCE_H_
+#define CHANCE_H_
 #include "Case.h"
 #include <iostream>
 using namespace std;
 
-class Communaute : public Case {
+class Chance : public Case {
 private:
 	void melanger();
 	string* lecture();
 	void ecriture(string*);
 public:
-	Communaute(string);
+	Chance(string);
 	string piocher();
 };
 
 
-#endif /* COMMUNAUTE_H_ */
+
+
+#endif /* CHANCE_H_ */
