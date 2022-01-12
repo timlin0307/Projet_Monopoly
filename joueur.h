@@ -10,16 +10,15 @@
 
 #include <iostream>
 #include <string>
-#include "pion.h"
 using namespace std;
 
 class joueur {
 	protected:
-		pion Pion;
+		int pionNum = 0;
 		int solde;
 		string nom;
 	public:
-		joueur(pion pi, int sol, string n);
+		joueur(int pn, int sol, string n);
 		void operation();
 		string getNom();
 		joueur getPion();
