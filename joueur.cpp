@@ -7,8 +7,8 @@
 
 #include "joueur.h"
 
-joueur::joueur(pion pi, int sol, string n) {
-	Pion = pi;
+joueur::joueur(int pn, int sol, string n) {
+	pionNum = pn;
 	solde = sol;
 	nom = n;
 }
@@ -21,7 +21,7 @@ string joueur::getNom() {
 }
 
 joueur joueur::getPion() {
-	return Pion;
+	return pionNum;
 }
 
 int joueur::getSolde() {
@@ -29,6 +29,7 @@ int joueur::getSolde() {
 }
 
 void joueur::setPion() {
+	pionNum = pn;
 }
 
 void joueur::setSolde(int sol) {
