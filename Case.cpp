@@ -34,4 +34,8 @@ void Case::affiche() {
 	cout << nom << endl;
 }
 
+void Case::arreterSur() {
+	cout << "générique" << endl;
+}
+
 

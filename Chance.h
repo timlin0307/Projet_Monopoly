@@ -14,12 +14,14 @@ using namespace std;
 class Chance : public Case {
 private:
 	void melanger();
+	string fileName;
+	
+public:
+	Chance(string, string);
 	string* lecture();
 	void ecriture(string*);
-public:
-	Chance(string);
 	string piocher();
-	//virtual void arreterSur() override;
+	void arreterSur();
 };
 
 

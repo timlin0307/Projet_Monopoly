@@ -16,7 +16,7 @@ private:
 	Case* suivante;
 public:
 	Case(string);
-	//virtual void arreterSur();
+	virtual void arreterSur();
 	string getNom();
 	Case* getSuivante();
 	void setNom(string);

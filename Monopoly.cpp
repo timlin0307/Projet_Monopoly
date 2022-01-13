@@ -11,23 +11,23 @@
 #include "Communaute.h"
 #include "Chance.h"
 #include <iostream>
+#include <string>
 using namespace std;
+
 
 int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
 	
-	Communaute com = Communaute("Caisse de com");
+	Communaute com = Communaute("Caisse de com", "communaute.txt");
+	
 	string s = com.piocher();
 	cout << s << endl;
-	string s2 = com.piocher();
+	
+	Chance ch = Chance("Chance", "chance.txt");
+	string s2 = ch.piocher();
 	cout << s2 << endl;
 	
-	Chance ch = Chance("Chance");
-	string s3 = ch.piocher();
-	cout << s3 << endl;
-	string s4 = ch.piocher();
-	cout << s4 << endl;
 	return 0;
 }

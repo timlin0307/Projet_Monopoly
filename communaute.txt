@@ -1,16 +1,16 @@
+PION-Retournez à  Belleville
+GAIN-Recevez votre intérêt sur l'emprunt à  7%
+GAIN-Recevez votre revenu annuel
+GAIN-Vous héritez
+LIBERE-Vous êtes libéré de prison
+DILEMNE-Payez une amende ou bien tirez une carte Chance
+ANNIVERSAIRE-C'est votre anniversaire
+GAIN-Erreur de la banque en votre faveur
+GAIN-Les Contributions vous remboursent
 PION-Allez en prison
 GAIN-La vente de votre stock vous rapporte
-ANNIVERSAIRE-C'est votre anniversaire
-PERTE-Payez votre police d'assurance
-GAIN-Recevez votre intérêt sur l'emprunt à  7%
-GAIN-Vous héritez
-GAIN-Les Contributions vous remboursent
-GAIN-Vous avez gagné le deuxième prix de beauté
-DILEMNE-Payez une amende ou bien tirez une carte Chance
-LIBERE-Vous êtes libéré de prison
-PION-Retournez à  Belleville
-GAIN-Recevez votre revenu annuel
-GAIN-Erreur de la banque en votre faveur
-PERTE-Payez la note du médecin
-PERTE-Payez à  l'hôpital
 GAIN-Placez vous sur la case Départ
+PERTE-Payez la note du médecin
+PERTE-Payez votre police d'assurance
+GAIN-Vous avez gagné le deuxième prix de beauté
+PERTE-Payez à  l'hôpital

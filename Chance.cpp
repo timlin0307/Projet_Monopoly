@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <vector>
 #include <algorithm>
 using namespace std;
 
@@ -21,7 +22,7 @@ void Chance::melanger() {							// pour mélanger le paquet de cartes
 	
 string* Chance::lecture() {							// pour lire dans le fichier txt
 	string* tab = new string[16];
-	ifstream monFlux("chance.txt");
+	ifstream monFlux(this->fileName);
 	string* res = nullptr;
 	if(monFlux) {
 		int i = 0;
@@ -32,11 +33,12 @@ string* Chance::lecture() {							// pour lire dans le fichier txt
 		}
 		res = tab;
 	}
+	monFlux.close();
 	return res;
 }
 
 void Chance::ecriture(string* tab) {				// pour écrire dans le txt
-	string const nomFichier("chance.txt");
+	string const nomFichier(this->fileName);
 	ofstream monFlux(nomFichier.c_str());
 	if(monFlux)	{
 		for(int i = 0 ; i < 16 ;i++)
@@ -44,14 +46,17 @@ void Chance::ecriture(string* tab) {				// pour écrire dans le txt
 	}
 	else
 		cout << "WARNING - Impossible d'ouvrir le fichier" << endl;
+	monFlux.close();
 }
 
 
-Chance::Chance(string nom):Case(nom) {				// constructeur d'une case Chance, qui mélange une fois le paquet en début de partie
+Chance::Chance(string nom, string fileName):Case(nom) {				// constructeur d'une case Chance, qui mélange une fois le paquet en début de partie
+	this->fileName = fileName;
 	Chance::melanger();
 }
 
 string Chance::piocher() {							// pioche la première carte du paquet et la remet au talon
+	cout << "pioche" << endl;
 	string* tab = Chance::lecture();
 	string* newTab = new string[16];
 	for (int i = 0; i < 15; i++) {
@@ -62,7 +67,7 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	return tab[0];
 }
 
-/*void arreterSur() {
+void Chance::arreterSur() {
 	cout << "fonction dérivée";
 	string ligne = Chance::piocher();
 		
@@ -75,16 +80,19 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	}
 		
 	string type = words[0];
-	switch (type) {
-	case "PION":
-		break;
-	case "GAIN":
-		break;
-	case "LIBERE":
-		break;
-	case "PERTE":
-		break;
-	case "REPARATION":
-		break;
+	if (type=="PION") {
+		cout << "test" << endl;
 	}
-}*/
+	else if (type=="GAIN") {
+		cout << "test" << endl;
+	}
+	else if (type=="LIBERE") {
+		cout << "test" << endl;
+	}
+	else if (type=="PERTE") {
+		cout << "test" << endl;
+	}
+	else if (type=="REPARATION") {
+		cout << "test" << endl;
+	}
+}

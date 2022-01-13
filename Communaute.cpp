@@ -14,30 +14,9 @@
 #include <algorithm>
 using namespace std;
 
-void Communaute::melanger() {   				// pour mélanger le paquet de cartes
-	string* tab = Communaute::lecture();
-	random_shuffle(tab, tab+16);
-	Communaute::ecriture(tab);
-}
-
-string Communaute::piocher() {					// pioche la premiere carte du paquet et la remet au talon
-	string* tab = Communaute::lecture();
-	string* newTab = new string[16];
-	for (int i = 0; i < 15; i++) {
-		newTab[i] = tab[i+1];
-	}
-	newTab[15] = tab[0];
-	Communaute::ecriture(newTab);
-	return tab[0];
-}
-
-Communaute::Communaute(string nom):Case(nom) {	// constructeur qui mélange une fois le paquet en début de partie
-	Communaute::melanger();
-}
-
 string* Communaute::lecture() {					// pour lire dans le fichier txt
 	string* tab = new string[16];
-	ifstream monFlux("communaute.txt");
+	ifstream monFlux(this->fileName);
 	string* res = nullptr;
 	if(monFlux) {
 	   	int i = 0;
@@ -48,11 +27,12 @@ string* Communaute::lecture() {					// pour lire dans le fichier txt
 	   	}
 	    res = tab;
 	}
+	monFlux.close();
 	return res;
 }
 
 void Communaute::ecriture(string* tab) {		// pour écrire dans le fichier txt
-	string const nomFichier("communaute.txt");
+	string const nomFichier(this->fileName);
 	ofstream monFlux(nomFichier.c_str());
 	if(monFlux)	{
 	 	for(int i = 0 ; i < 16 ;i++)
@@ -60,9 +40,34 @@ void Communaute::ecriture(string* tab) {		// pour écrire dans le fichier txt
 	}
 	else
 	 	cout << "WARNING - Impossible d'ouvrir le fichier" << endl;    
+	monFlux.close();
 }
 
-/*void arreterSur() {
+void Communaute::melanger() {   				// pour mélanger le paquet de cartes
+	string* tab = Communaute::lecture();
+	random_shuffle(tab, tab+16);
+	Communaute::ecriture(tab);
+}
+
+string Communaute::piocher() {					// pioche la premiere carte du paquet et la remet au talon
+	cout << "pioche" << endl;
+	string* tab = Communaute::lecture();
+	string* newTab = new string[16];
+	for (int i = 0; i < 15; i++) {
+		newTab[i] = tab[i+1];
+	}
+	newTab[15] = tab[0];
+	Communaute::ecriture(newTab);
+	return tab[0];
+}
+
+Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur qui mélange une fois le paquet en début de partie
+	this->fileName = fileName;
+	Communaute::melanger();
+}
+
+
+void Communaute::arreterSur() {
 	cout << "fonction dérivée";
 	string ligne = Communaute::piocher();
 	
@@ -75,18 +80,22 @@ void Communaute::ecriture(string* tab) {		// pour écrire dans le fichier txt
 	}
 	
 	string type = words[0];
-	switch (type) {
-	case "ANNIVERSAIRE":
-		break;
-	case "GAIN":
-		break;
-	case "LIBERE":
-		break;
-	case "PERTE":
-		break;
-	case "DILEMNE":
-		break;
-	case "PION":
-		break;
+	if (type=="ANNIVERSAIRE") {
+		cout << "test" << endl;
 	}
-}*/
+	else if (type=="GAIN") {
+		cout << "test" << endl;
+	}
+	else if (type=="LIBERE") {
+		cout << "test" << endl;
+	}
+	else if (type=="PERTE") {
+		cout << "test" << endl;
+	}
+	else if (type=="DILEMNE") {
+		cout << "test" << endl;
+	}
+	else if (type=="PION") {
+		cout << "test" << endl;
+	}
+}

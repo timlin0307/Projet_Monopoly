@@ -32,6 +32,7 @@ string* Plateau::lecture() {
     	}
     	res = tab;
     }
+    monFlux.close();
     return res;
 }
 
