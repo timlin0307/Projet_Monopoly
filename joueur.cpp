@@ -39,8 +39,10 @@ void joueur::setSolde(int sol) {
 void joueur::jouer() {
 }
 
-void joueur::crediter() {
+void joueur::crediter(int amount) {
+	solde += amount;
 }
 
-void joueur::debiter() {
+void joueur::debiter(int amount) {
+	solde -= amount;
 }

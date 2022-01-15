@@ -26,8 +26,8 @@ class joueur {
 		void setPion(int);
 		void setSolde(int sol);
 		void jouer();
-		void crediter();
-		void debiter();
+		void crediter(int);
+		void debiter(int);
 };
 
 #endif /* JOUEUR_H_ */
