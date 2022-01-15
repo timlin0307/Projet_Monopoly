@@ -19,19 +19,21 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	Case departure = plateau.getCase(39);
+	Case departure = plateau.getCase(2);
 	departure.affiche();
 	
 	joueur j = joueur(0, 0, "Lucas");
-	departure.deplacement(&j, 6);
+	departure.arreterSur(&j, 6);
+	cout << j.getSolde() << endl;
+	//departure.deplacement(&j, 6);
 	
-	Communaute com = Communaute("Caisse de com", "communaute.txt");
+	/*Communaute com = Communaute("Caisse de com", "communaute.txt");
 	string s = com.piocher();
 	cout << s << endl;
 	
 	Chance ch = Chance("Chance", "chance.txt");
 	string s2 = ch.piocher();
-	cout << s2 << endl;
+	cout << s2 << endl;*/
 	
 	return 0;
 }

@@ -1,8 +1,8 @@
 /*
  * Case.h
  *
- *  Created on: 7 janv. 2022
- *      Author: lucas
+ *  Created on: 22 déc. 2021
+ *      Author: neyre
  */
 
 #ifndef CASE_H_
@@ -17,7 +17,7 @@ protected:
 	Case* suivante;
 public:
 	Case(string);
-	virtual void arreterSur();
+	virtual void arreterSur(joueur*, int);
 	string getNom();
 	Case* getSuivante();
 	void setNom(string);

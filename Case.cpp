@@ -1,10 +1,9 @@
 /*
  * Case.cpp
  *
- *  Created on: 7 janv. 2022
- *      Author: lucas
+ *  Created on: 22 déc. 2021
+ *      Author: neyre
  */
-
 
 #include "Case.h"
 #include "joueur.h"
@@ -19,7 +18,7 @@ Case::Case(string nom) {
 string Case::getNom() {
 	return nom;
 }
-
+	
 Case* Case::getSuivante() {
 	return suivante;
 }
@@ -27,7 +26,7 @@ Case* Case::getSuivante() {
 void Case::setNom(string nom) {
 	this->nom = nom;
 }
-
+	
 void Case::setSuivante(Case* suivante) {
 	this->suivante = suivante;
 }
@@ -36,7 +35,7 @@ void Case::affiche() {
 	cout << nom << endl;
 }
 
-void Case::arreterSur() {
+void Case::arreterSur(joueur* j, int de) {
 	cout << "générique" << endl;
 }
 

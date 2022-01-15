@@ -6,6 +6,7 @@
  */
 
 #include "Communaute.h"
+#include "joueur.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -67,7 +68,7 @@ Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur 
 }
 
 
-void Communaute::arreterSur() {
+void Communaute::arreterSur(joueur* j, int de) {
 	cout << "fonction dérivée";
 	string ligne = Communaute::piocher();
 	
@@ -85,6 +86,7 @@ void Communaute::arreterSur() {
 	}
 	else if (type=="GAIN") {
 		cout << "test" << endl;
+		j->crediter(100);
 	}
 	else if (type=="LIBERE") {
 		cout << "test" << endl;

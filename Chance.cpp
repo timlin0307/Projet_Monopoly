@@ -56,7 +56,7 @@ Chance::Chance(string nom, string fileName):Case(nom) {				// constructeur d'une
 }
 
 string Chance::piocher() {							// pioche la première carte du paquet et la remet au talon
-	cout << "pioche" << endl;
+	cout << "Vous avez pioché la carte : " << endl;
 	string* tab = Chance::lecture();
 	string* newTab = new string[16];
 	for (int i = 0; i < 15; i++) {

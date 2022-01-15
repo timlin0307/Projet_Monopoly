@@ -8,6 +8,7 @@
 #ifndef COMMUNAUTE_H_
 #define COMMUNAUTE_H_
 #include "Case.h"
+#include "joueur.h"
 
 #include <iostream>
 using namespace std;
@@ -22,7 +23,7 @@ public:
 	string piocher();
 	string* lecture();
 	void ecriture(string*);
-	void arreterSur();
+	void arreterSur(joueur*, int);
 };
 
 

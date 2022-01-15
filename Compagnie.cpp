@@ -10,44 +10,32 @@
 using namespace std;
 #include "Compagnie.h"
 
-Compagnie ::Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur,int valhypo, joueur* j, bool hypotheque)
+Compagnie ::Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur,int valhypo, bool hypotheque)
 :Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
 {
-	appartient_a = j;
+
 }
 
-void Compagnie :: arreterSur(joueur j, int de)
+void Compagnie :: arreterSur(int de)
 {
+	Case casesuivante = *suivante ;
+	Case casecourante = casesuivante ;
+	for (int i=0; i<de; i++)
+	{
+		casecourante = casesuivante ;
+		casesuivante = *casecourante.getSuivante() ;
+	}
+	cout << "vous êtes sur la case" << casecourante.getNom() << endl;
 	if (nom_joueur == "")
 	{
 		cout << "la case n'appartient à personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
-		cout << "votre solde de compte en banque est" << j.getSolde() << endl;
 		cout << "souhaitez vous l'acheter ?" << endl;
-		cout << "Si oui taper 1, si non taper 2" << endl;
-		int achat;
-		cin >> achat ;
-		/*
-		 * cin pour savoir oui ou non avec des exceptions.
-		 */
-		if (achat == 1)
-		{
-			j.setSolde(j.getSolde()-prixAchat);
-			nom_joueur = j.getNom();
-			appartient_a = &j;
-		}
 	}
 
 	else
 	{
 		cout << "la case appartient à " << nom_joueur << endl;
-		/*
-		 * on récupère le nom dans la liste en la parcourant
-		 */
-		this -> calcul_loyer(de);
-		int a_payer = loyer;
-		(*appartient_a).setSolde(a_payer);
-		j.setSolde(a_payer);
 	}
 }
 

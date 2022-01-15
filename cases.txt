@@ -16,15 +16,15 @@ TERRAIN-Rue de Paradis
 GARE-Gare de Lyon
 TERRAIN-Avenue Mozart
 COMMUNAUTE-Caisse de communauté
-TERRAIN-Boulevard Saint-Michel
+TERRAIN-Boulevard Saint Michel
 TERRAIN-Place Pigalle
 GRATUIT-Parc gratuit
 TERRAIN-Avenue Matignon
 CHANCE-Chance
 TERRAIN-Boulevard Malesherbes
-TERRAIN-Avenue Henri-Martin
+TERRAIN-Avenue Henri Martin
 GARE-Gare du Nord
-TERRAIN-Faubourg Saint-Honoré
+TERRAIN-Faubourg Saint Honoré
 TERRAIN-Place de la Bourse
 COMPAGNIE-Compagnie de distribution des eaux
 TERRAIN-Rue Lafayette
@@ -33,8 +33,8 @@ TERRAIN-Avenue de Breteuil
 TERRAIN-Avenue Foch
 COMMUNAUTE-Caisse de communauté
 TERRAIN-Boulevard des Capucines
-GARE-Gare Saint-Lazare
+GARE-Gare Saint Lazare
 CHANCE-Chance
-TERRAIN-Avenue des Champs-Elysées
+TERRAIN-Avenue des Champs Elysées
 TAXE-Taxe de luxe
 TERRAIN-Rue de la Paix

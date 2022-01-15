@@ -7,16 +7,86 @@
 
 #include "Case.h"
 #include "Plateau.h"
+#include "Gare.h"
+#include "Terrain.h"
+#include "Compagnie.h"
+#include "Chance.h"
+#include "Communaute.h"
+#include "Propriete.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 void Plateau::ajouterCase(string nom) {
-	Case* premiere = new Case(nom);
-	premiere->setSuivante(tete);
-    tete = premiere;
+	
+	string sep = "-";
+	vector<string> words{};
+	size_t pos;
+	while ((pos = nom.find(sep)) != string::npos) {// tant qu'on trouve un caractère séparateur
+		words.push_back(nom.substr(0, pos));		// comme un append
+		nom.erase(0, pos + sep.length());			// on supprime ce qui a déjà été examiné
+	}
+	
+	string type = words[0];
+	cout << type << endl;
+	
+	if (type=="TERRAIN") {
+		cout << "terrain" << endl;
+		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="GARE") {
+		cout << "gare" << endl;
+		Case* premiere = new Gare(nom, 50, 50, "", 25);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="COMPAGNIE") {
+		cout << "cie" << endl;
+		Case* premiere = new Compagnie(nom, 50, 50, "", 25);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="CHANCE") {
+		cout << "chance" << endl;
+		Case* premiere = new Chance(nom, "chance.txt");
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="COMMUNAUTE") {
+		cout << "com" << endl;
+		Case* premiere = new Communaute(nom, "communaute.txt");
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="PRISON") {
+		cout << "prison" << endl;
+		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="TAXE") {
+		cout << "taxe" << endl;
+		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="GRATUIT") {
+		cout << "gratuit" << endl;
+		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else {
+		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	
 }
 
 string* Plateau::lecture() {
