@@ -1,8 +1,8 @@
 /*
  * Case.h
  *
- *  Created on: 22 déc. 2021
- *      Author: neyre
+ *  Created on: 7 janv. 2022
+ *      Author: lucas
  */
 
 #ifndef CASE_H_
