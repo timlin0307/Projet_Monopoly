@@ -7,11 +7,12 @@
 
 #ifndef CASE_H_
 #define CASE_H_
+#include "joueur.h"
 #include <iostream>
 using namespace std;
 
 class Case {
-private:
+protected:
 	string nom;
 	Case* suivante;
 public:
@@ -22,6 +23,7 @@ public:
 	void setNom(string);
 	void setSuivante(Case*);
 	void affiche();
+	Case deplacement(joueur*, int);
 };
 
 

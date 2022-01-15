@@ -19,9 +19,13 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
+	Case departure = plateau.getCase(39);
+	departure.affiche();
+	
+	joueur j = joueur(0, 0, "Lucas");
+	departure.deplacement(&j, 6);
 	
 	Communaute com = Communaute("Caisse de com", "communaute.txt");
-	
 	string s = com.piocher();
 	cout << s << endl;
 	

@@ -21,9 +21,9 @@ class joueur {
 		joueur(int pn, int sol, string n);
 		void operation();
 		string getNom();
-		joueur getPion();
+		int getPion();
 		int getSolde();
-		void setPion();
+		void setPion(int);
 		void setSolde(int sol);
 		void jouer();
 		void crediter();

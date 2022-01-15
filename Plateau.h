@@ -12,13 +12,14 @@
 using namespace std;
 
 class Plateau {
-private:
+protected:
 	Case* tete;
 	void ajouterCase(string);
 	string* lecture();
 public:
 	Plateau();
 	void affiche();
+	Case getCase(int);
 };
 
 

@@ -6,6 +6,7 @@
  */
 
 #include "Case.h"
+#include "joueur.h"
 #include <iostream>
 using namespace std;
 
@@ -36,6 +37,17 @@ void Case::affiche() {
 
 void Case::arreterSur() {
 	cout << "générique" << endl;
+}
+
+Case Case::deplacement(joueur* j, int de) {
+	Case casesuivante = *suivante ;
+	Case casecourante = casesuivante ;
+	for (int i=0; i<de; i++) {
+		casecourante = casesuivante ;
+		casesuivante = *casecourante.getSuivante() ;
+	}
+	cout << "Vous êtes arrivé(e) sur la case : " << casecourante.getNom() << endl;
+	return casecourante;
 }
 
 

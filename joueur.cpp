@@ -20,7 +20,7 @@ string joueur::getNom() {
 	return nom;
 }
 
-joueur joueur::getPion() {
+int joueur::getPion() {
 	return pionNum;
 }
 
@@ -28,7 +28,7 @@ int joueur::getSolde() {
 	return solde;
 }
 
-void joueur::setPion() {
+void joueur::setPion(int pn) {
 	pionNum = pn;
 }
 

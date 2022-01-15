@@ -55,3 +55,11 @@ void Plateau::affiche() {
 		courante = courante->getSuivante();
 	}
 }
+
+Case Plateau::getCase(int i) {
+	Case courante = *((*tete).getSuivante());
+	for (int j=0; j<i-1; j++) {
+		courante = *courante.getSuivante();
+	}
+	return courante;
+}

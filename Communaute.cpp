@@ -50,7 +50,7 @@ void Communaute::melanger() {   				// pour mélanger le paquet de cartes
 }
 
 string Communaute::piocher() {					// pioche la premiere carte du paquet et la remet au talon
-	cout << "pioche" << endl;
+	cout << "Vous avez pioché la carte : " << endl;
 	string* tab = Communaute::lecture();
 	string* newTab = new string[16];
 	for (int i = 0; i < 15; i++) {
