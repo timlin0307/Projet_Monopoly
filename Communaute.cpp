@@ -65,11 +65,12 @@ string Communaute::piocher() {					// pioche la premiere carte du paquet et la r
 Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur qui mélange une fois le paquet en début de partie
 	this->fileName = fileName;
 	Communaute::melanger();
+	cout << "caisse de com créée" << endl;
 }
 
 
 void Communaute::arreterSur(joueur* j, int de) {
-	cout << "fonction dérivée";
+	cout << "Fonction virtuelle redéfinie dans une classe dérivée" << endl;
 	string ligne = Communaute::piocher();
 	
 	string sep = "-";
@@ -82,22 +83,23 @@ void Communaute::arreterSur(joueur* j, int de) {
 	
 	string type = words[0];
 	if (type=="ANNIVERSAIRE") {
-		cout << "test" << endl;
+		cout << "anniv" << endl;
 	}
 	else if (type=="GAIN") {
-		cout << "test" << endl;
+		cout << "gain" << endl;
 		j->crediter(100);
 	}
 	else if (type=="LIBERE") {
-		cout << "test" << endl;
+		cout << "libre" << endl;
 	}
 	else if (type=="PERTE") {
-		cout << "test" << endl;
+		cout << "perte" << endl;
+		j->debiter(100);
 	}
 	else if (type=="DILEMNE") {
-		cout << "test" << endl;
+		cout << "dilemne" << endl;
 	}
 	else if (type=="PION") {
-		cout << "test" << endl;
+		cout << "mouv" << endl;
 	}
 }

@@ -19,7 +19,7 @@ protected:
 public:
 	Plateau();
 	void affiche();
-	Case getCase(int);
+	Case* getCase(int);
 };
 
 

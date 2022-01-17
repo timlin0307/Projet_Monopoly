@@ -23,7 +23,7 @@ public:
 	void setNom(string);
 	void setSuivante(Case*);
 	void affiche();
-	Case deplacement(joueur*, int);
+	Case* deplacement(joueur*, int);
 };
 
 

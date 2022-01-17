@@ -12,8 +12,6 @@
 #include <string>
 using namespace std;
 #include "Propriete.h"
-#include "Case.h"
-#include "Joueur.h"
 /* herite de propriete
  * protected : nom de la case
  *
@@ -25,11 +23,11 @@ using namespace std;
 class Compagnie : public Propriete
 {
 protected :
-	joueur * appartient_a;
+	/* rien à mettre on herite de propriete */
 
 public :
-	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, joueur* appartient_a= nullptr, bool hypotheque = false);
-	void arreterSur(joueur*, int);
+	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false);
+	void arreterSur(int);
 	void calcul_loyer(int de);
 
 

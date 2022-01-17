@@ -36,17 +36,17 @@ void Case::affiche() {
 }
 
 void Case::arreterSur(joueur* j, int de) {
-	cout << "générique" << endl;
+	cout << "Fonction virtuelle générique" << endl;
 }
 
-Case Case::deplacement(joueur* j, int de) {
-	Case casesuivante = *suivante ;
-	Case casecourante = casesuivante ;
+Case* Case::deplacement(joueur* j, int de) {
+	Case* casesuivante = suivante ;
+	Case* casecourante = casesuivante ;
 	for (int i=0; i<de; i++) {
-		casecourante = casesuivante ;
-		casesuivante = *casecourante.getSuivante() ;
+		casecourante = casesuivante;
+		casesuivante = casecourante->getSuivante() ;
 	}
-	cout << "Vous êtes arrivé(e) sur la case : " << casecourante.getNom() << endl;
+	cout << "Vous êtes arrivé(e) sur la case : " << casecourante->getNom() << endl;
 	return casecourante;
 }
 

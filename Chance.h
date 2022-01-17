@@ -8,6 +8,7 @@
 #ifndef CHANCE_H_
 #define CHANCE_H_
 #include "Case.h"
+#include "joueur.h"
 #include <iostream>
 using namespace std;
 
@@ -21,7 +22,7 @@ public:
 	string* lecture();
 	void ecriture(string*);
 	string piocher();
-	void arreterSur();
+	void arreterSur(joueur*, int);
 };
 
 

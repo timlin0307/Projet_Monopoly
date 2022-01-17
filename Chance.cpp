@@ -67,8 +67,8 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	return tab[0];
 }
 
-void Chance::arreterSur() {
-	cout << "fonction dérivée";
+void Chance::arreterSur(joueur* j, int de) {
+	cout << "Fonction virtuelle redéfinie dans une classe dérivée" << endl;
 	string ligne = Chance::piocher();
 		
 	string sep = "-";
@@ -81,18 +81,20 @@ void Chance::arreterSur() {
 		
 	string type = words[0];
 	if (type=="PION") {
-		cout << "test" << endl;
+		cout << "mouv" << endl;
 	}
 	else if (type=="GAIN") {
-		cout << "test" << endl;
+		cout << "gain" << endl;
+		j->crediter(100);
 	}
 	else if (type=="LIBERE") {
-		cout << "test" << endl;
+		cout << "libre" << endl;
 	}
 	else if (type=="PERTE") {
-		cout << "test" << endl;
+		cout << "perte" << endl;
+		j->debiter(100);
 	}
 	else if (type=="REPARATION") {
-		cout << "test" << endl;
+		cout << "réparation" << endl;
 	}
 }
