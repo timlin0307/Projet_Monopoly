@@ -20,14 +20,14 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	Case* departure = plateau.getCase(8);
+	Case* departure = plateau.getCase(2);
 	departure->affiche();
 	cout << typeid(*departure).name() << endl;
 	
 	joueur j = joueur(0, 0, "Lucas");
 	departure->arreterSur(&j, 6);
 	cout << j.getSolde() << endl;
-	//departure.deplacement(&j, 6);
+	departure->deplacement(&j, 6);
 	
 	/*Communaute com = Communaute("Caisse de com", "communaute.txt");
 	string s = com.piocher();

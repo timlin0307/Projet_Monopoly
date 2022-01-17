@@ -107,9 +107,6 @@ Plateau::Plateau() {
 		Plateau::ajouterCase(tab[i]);
 	}
 	premiere->setSuivante(tete);
-	/*Case end = Plateau::getCase(40);
-	Case begin = Plateau::getCase(1);
-	end.setSuivante(&begin);*/
 }
 
 void Plateau::affiche() {

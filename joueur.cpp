@@ -6,12 +6,14 @@
  */
 
 #include "joueur.h"
+using namespace std;
 
 joueur::joueur(int pn, int sol, string n) {
 	pionNum = pn;
 	solde = sol;
 	nom = n;
 }
+
 
 void joueur::operation() {
 }

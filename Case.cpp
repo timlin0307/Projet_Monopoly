@@ -7,6 +7,7 @@
 
 #include "Case.h"
 #include "joueur.h"
+#include "Plateau.h"
 #include <iostream>
 using namespace std;
 

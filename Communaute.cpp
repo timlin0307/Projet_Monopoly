@@ -65,7 +65,6 @@ string Communaute::piocher() {					// pioche la premiere carte du paquet et la r
 Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur qui mélange une fois le paquet en début de partie
 	this->fileName = fileName;
 	Communaute::melanger();
-	cout << "caisse de com créée" << endl;
 }
 
 
@@ -80,26 +79,33 @@ void Communaute::arreterSur(joueur* j, int de) {
 		words.push_back(ligne.substr(0, pos));		// comme un append
 	    ligne.erase(0, pos + sep.length());			// on supprime ce qui a déjà été examiné
 	}
-	
+	cout << ligne << endl;
 	string type = words[0];
 	if (type=="ANNIVERSAIRE") {
 		cout << "anniv" << endl;
 	}
 	else if (type=="GAIN") {
-		cout << "gain" << endl;
-		j->crediter(100);
+		string montant = words[1];
+		int credit = stoi(montant);
+		cout << "Vous avez pioché une carte qui vous fait gagner de l'argent +" << credit << " euros" << endl;
+		j->crediter(credit);
 	}
 	else if (type=="LIBERE") {
 		cout << "libre" << endl;
 	}
-	else if (type=="PERTE") {
-		cout << "perte" << endl;
-		j->debiter(100);
+	else if (type=="PERTE") {		
+		string montant = words[1];
+		int debit = stoi(montant);
+		cout << "Vous avez pioché une carte qui vous fait perdre de l'argent -" << debit << " euros" << endl;
+		j->debiter(debit);
 	}
 	else if (type=="DILEMNE") {
 		cout << "dilemne" << endl;
 	}
 	else if (type=="PION") {
-		cout << "mouv" << endl;
+		cout << "Vous avez pioché une carte qui vous ordonne de vous déplacer" << endl;
+		string numero = words[1];
+		//int num = stoi(numero);
+		cout << numero << endl;
 	}
 }
