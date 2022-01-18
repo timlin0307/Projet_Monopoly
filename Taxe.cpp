@@ -17,7 +17,7 @@ Taxe :: Taxe (string nomcase, int prix)
 	prix_a_payer = prix;
 }
 
-void Taxe :: arreterSur(joueur * j, int de)
+void Taxe :: arreterSur(Joueur * j, int de)
 {
 	j->debiter(prix_a_payer);
 }
