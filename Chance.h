@@ -13,11 +13,11 @@
 using namespace std;
 
 class Chance : public Case {
-private:
+    protected:
 	void melanger();
 	string fileName;
 	
-public:
+    public:
 	Chance(string, string);
 	string* lecture();
 	void ecriture(string*);
