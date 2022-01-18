@@ -1,7 +1,7 @@
 /*
  * Compagnie.h
  *
- *  Created on: 18 déc. 2021
+ *  Created on: 18 dÃ©c. 2021
  *      Author: lucas
  */
 
@@ -20,12 +20,11 @@ using namespace std;
  *
  */
 
-class Compagnie : public Propriete
-{
-protected :
-	/* rien à mettre on herite de propriete */
+class Compagnie : public Propriete {
+    protected:
+	/* rien Ã  mettre on herite de propriete */
 
-public :
+    public:
 	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false);
 	void arreterSur(int);
 	void calcul_loyer(int de);
