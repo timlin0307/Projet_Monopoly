@@ -14,11 +14,11 @@
 using namespace std;
 
 class Communaute : public Case {
-private:
+    protected:
 	void melanger();
 	string fileName;
 	
-public:
+    public:
 	Communaute(string, string);
 	string piocher();
 	string* lecture();
