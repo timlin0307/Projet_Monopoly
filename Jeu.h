@@ -18,7 +18,7 @@ class Jeu {
 	int nb_joueurs;
 
     public:
-	jeu();
+	Jeu();
 	int compteur();
 	int getNbjoueurs();
 	void setNbjoueurs(int nb_joueurs);
