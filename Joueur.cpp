@@ -45,12 +45,12 @@ void Joueur::setSolde(int sol) {
 	solde = sol;
 }
 
-void Joueur::setNbGare() {
-	nb_gare += 1;
+void Joueur::setNbGare(int nbGare) {
+	nb_gare += nbGare;
 }
 
-void Joueur::setNbCompagnie() {
-	nb_comp += 1;
+void Joueur::setNbCompagnie(int nbComp) {
+	nb_comp += nbComp;
 }
 
 void Joueur::jouer() {
