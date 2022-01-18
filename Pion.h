@@ -1,5 +1,5 @@
 /*
- * pion.h
+ * Pion.h
  *
  *  Created on: 2021/12/17
  *      Author: Yen-Ting Lin
@@ -10,21 +10,21 @@
 
 #include <iostream>
 #include <string>
-#include "joueur.h"
+#include "Joueur.h"
 #include "Case.h"
 using namespace std;
 
-class pion {
+class Pion {
 	protected:
-		joueur* Joueur;
+		Joueur* joueur;
 		Case* Position;
 		string nom;
 	public:
-		pion(joueur* j, Case* p, string n);
-		joueur* getJoueur();
+		pion(Joueur* j, Case* p, string n);
+		Joueur* getJoueur();
 		Case* getPosition();
 		string getNom();
-		void setJoueur(joueur* j);
+		void setJoueur(Joueur* j);
 		void setPosition(Case* p);
 		void setNom(string n);
 		void setPion();
