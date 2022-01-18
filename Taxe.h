@@ -19,7 +19,7 @@ protected:
 
 public:
 	Taxe (string nom, int prix);
-	void arreterSur(joueur * , int );
+	void arreterSur(Joueur * , int );
 };
 
 
