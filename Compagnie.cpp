@@ -11,13 +11,13 @@ using namespace std;
 #include "Compagnie.h"
 #include "Joueur.h"
 
-Compagnie ::Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur,int valhypo, joueur* j, bool hypotheque)
+Compagnie ::Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur,int valhypo, Joueur* j, bool hypotheque)
 :Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
 {
 	appartient_a = j;
 }
 
-void Compagnie :: arreterSur(joueur* j, int de)
+void Compagnie :: arreterSur(Joueur* j, int de)
 {
 	if (nom_joueur == "")
 	{
@@ -34,6 +34,7 @@ void Compagnie :: arreterSur(joueur* j, int de)
 			(*j).debiter(prixAchat);
 			nom_joueur = (*j).getNom();
 			appartient_a = j;
+			(*j).setNbCompagnie(1);
 			cout << "Votre nouveau solde est de " << (*j).getSolde() << endl;
 		}
 	}
@@ -56,23 +57,14 @@ void Compagnie :: arreterSur(joueur* j, int de)
 
 void Compagnie :: calcul_loyer(int de)
 {
-	loyer = de *4;/* il faut pouvoir séparer les différents cas */
-
-	/*
-	 * mettre le nom du joueur en argument ou carrement le pointeur du joueur a qui appartient la case
-	 * L'autre case appartient à :
-	 *
-	 * Case departure = plateau.getCase(0);
-	 * departure.deplacement(&j1, 12);	-> obliger de faire un déplacement pour retrouver l'autre case ???
-	 *
-	 * if meme nom
-	 * int coef =10;
-	 *
-	 * else
-	 * int coef =4;
-	 *
-	 * loyer = de * coef;
-	 */
+	if ((*appartient_a).getNbCompagnie() == 1)
+	{
+		loyer = de *4;
+	}
+	else
+	{
+		loyer = de *10;
+	}
 }
 
 

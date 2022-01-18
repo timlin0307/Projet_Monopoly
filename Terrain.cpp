@@ -14,7 +14,7 @@ using namespace std;
 
 
 Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
-		int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons, joueur* jref, bool hypotheque)
+		int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons, Joueur* jref, bool hypotheque)
 :Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
 {
 	this -> couleur = couleur;
@@ -25,7 +25,7 @@ Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
 }
 
 
-void Terrain :: arreterSur(joueur* j, int de)
+void Terrain :: arreterSur(Joueur* j, int de)
 {
 	if (nom_joueur == "")
 	{
@@ -108,6 +108,7 @@ void Terrain :: ajoute_maison()
 	}
 	catch (string except) {
 	cout << except << "\n" ;
+
 
 	}
 }

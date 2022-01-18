@@ -14,22 +14,16 @@ using namespace std;
 #include "Propriete.h"
 #include "Case.h"
 #include "Joueur.h"
-/* herite de propriete
- * protected : nom de la case
- *
- * public : getNom
- * setNom
- *
- */
+
 
 class Compagnie : public Propriete
 {
 protected :
-	joueur * appartient_a;
+	Joueur * appartient_a;
 
 public :
-	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, joueur* appartient_a= nullptr, bool hypotheque = false);
-	void arreterSur(joueur*, int);
+	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, Joueur* appartient_a= nullptr, bool hypotheque = false);
+	void arreterSur(Joueur*, int);
 	void calcul_loyer(int de);
 
 

@@ -24,11 +24,11 @@ using namespace std;
 class Gare : public Propriete
 {
 protected :
-	joueur * appartient_a;
+	Joueur * appartient_a;
 
 public :
-	Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo,joueur* appartient_a= nullptr, bool hypotheque = false);
-	void arreterSur(joueur* , int);
+	Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo,Joueur* appartient_a= nullptr, bool hypotheque = false);
+	void arreterSur(Joueur* , int);
 	void calcul_loyer();
 
 

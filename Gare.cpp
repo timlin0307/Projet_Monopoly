@@ -10,13 +10,13 @@
 using namespace std;
 #include "Gare.h"
 
-Gare ::Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo,joueur* jref,  bool hypotheque)
+Gare ::Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo,Joueur* jref,  bool hypotheque)
 :Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
 {
 	appartient_a=jref;
 }
 
-void Gare :: arreterSur(joueur* j, int de)
+void Gare :: arreterSur(Joueur* j, int de)
 {
 	if (nom_joueur == "")
 	{
@@ -33,6 +33,7 @@ void Gare :: arreterSur(joueur* j, int de)
 			(*j).debiter(prixAchat);
 			nom_joueur = (*j).getNom();
 			appartient_a = j;
+			(*j).setNbGare(1);
 			cout << "Votre nouveau solde est de " << (*j).getSolde() << endl;
 		}
 	}
@@ -55,7 +56,7 @@ void Gare :: arreterSur(joueur* j, int de)
 
 void Gare :: calcul_loyer()
 {
-	int i = 0;/* il faut qu'on puisse initialiser i au nb de gare de la personne */
+	int i = (*appartient_a).getNbGare();
 	loyer = 25 * 2^(i);
 }
 
