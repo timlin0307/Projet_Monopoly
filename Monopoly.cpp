@@ -20,7 +20,7 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	Case* departure = plateau.getCase(2);
+	Case* departure = plateau.getCase(7);
 	departure->affiche();
 	cout << typeid(*departure).name() << endl;
 	

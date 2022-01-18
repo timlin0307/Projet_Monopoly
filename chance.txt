@@ -1,16 +1,16 @@
 REPARATION-Vous êtes imposé pour les réparations de voirie
-PION-Rendez vous à  l'Avenue Henri-Martin
-PION-Allez à  la gare de Lyon
-PION-Allez en prison
-PION-Rendez vous à  la Rue de la Paix
-GAIN-Vous avez gagné le prix de mots croisés
+PION-Rendez vous à  l'Avenue Henri Martin
+GAIN-100-Vous avez gagné le prix de mots croisés
 PION-Avancez jusqu'à  la case Départ
-PERTE-Amende pour ivresse
-PERTE-Payez pour frais de scolarité
-GAIN-Votre immeuble et votre prêt rapportent
-PERTE-Amende pour excès de vitesse
+PION-Rendez vous à  la Rue de la Paix
 PION-Avancez au Boulevard de la Villette
-GAIN-La Banque vous verse un dividende
+PERTE-150-Payez pour frais de scolarité
+PERTE-20-Amende pour ivresse
+PION-Allez en prison
+GAIN-150-Votre immeuble et votre prêt rapportent
 REPARATION-Faites des réparations dans toutes vos maisons
+GAIN-50-La Banque vous verse un dividende
+PION-Allez à  la gare de Lyon
+PERTE-15-Amende pour excès de vitesse
 LIBERE-Vous êtes libéré de prison
 PION-Reculez de trois cases
