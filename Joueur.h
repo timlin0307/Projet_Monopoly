@@ -17,6 +17,8 @@ class Joueur {
 		int pionNum = 0;
 		int solde;
 		string nom;
+		int nb_gare;
+		int nb_comp;
 	public:
 		Joueur(int pn, int sol, string n);
 		void operation();
@@ -27,8 +29,8 @@ class Joueur {
 		int getNbCompagnie();
 		void setPion(int);
 		void setSolde(int sol);
-		void setNbGare(int nbG);
-		void setNbCompagnie(int nbC);
+		void setNbGare();
+		void setNbCompagnie();
 		void jouer();
 		void crediter(int);
 		void debiter(int);
