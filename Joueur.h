@@ -20,7 +20,7 @@ class Joueur {
 		int nb_gare;
 		int nb_comp;
 	public:
-		Joueur(int pn, int sol, string n);
+		Joueur(int pn, int sol, string n, int nbg, int nbc);
 		void operation();
 		string getNom();
 		int getPion();
