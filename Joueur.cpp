@@ -29,12 +29,28 @@ int Joueur::getSolde() {
 	return solde;
 }
 
+int Joueur::getNbGare() {
+	return nb_gare;
+}
+
+int Joueur::getNbCompagnie() {
+	return nb_comp;
+}
+
 void Joueur::setPion(int pn) {
 	pionNum = pn;
 }
 
 void Joueur::setSolde(int sol) {
 	solde = sol;
+}
+
+void Joueur::setNbGare() {
+	nb_gare += 1;
+}
+
+void Joueur::setNbCompagnie() {
+	nb_comp += 1;
 }
 
 void Joueur::jouer() {
