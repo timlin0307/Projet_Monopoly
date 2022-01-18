@@ -8,10 +8,12 @@
 
 #include "Joueur.h"
 
-Joueur::Joueur(int pn, int sol, string n) {
+Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	pionNum = pn;
 	solde = sol;
 	nom = n;
+	nb_gare = nbg;
+	nb_comp = nbc;
 }
 
 void Joueur::operation() {
