@@ -1,13 +1,13 @@
 /*
  * Case.h
  *
- *  Created on: 22 déc. 2021
+ *  Created on: 22 dÃ©c. 2021
  *      Author: neyre
  */
 
 #ifndef CASE_H_
 #define CASE_H_
-#include "joueur.h"
+#include "Joueur.h"
 #include <iostream>
 using namespace std;
 
@@ -17,13 +17,13 @@ protected:
 	Case* suivante;
 public:
 	Case(string);
-	virtual void arreterSur(joueur*, int);
+	virtual void arreterSur(Joueur*, int);
 	string getNom();
 	Case* getSuivante();
 	void setNom(string);
 	void setSuivante(Case*);
 	void affiche();
-	Case* deplacement(joueur*, int);
+	Case* deplacement(Joueur*, int);
 };
 
 
