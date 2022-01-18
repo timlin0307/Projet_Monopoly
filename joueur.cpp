@@ -6,14 +6,23 @@
  */
 
 #include "joueur.h"
+#include <string>
 using namespace std;
 
 joueur::joueur(int pn, int sol, string n) {
 	pionNum = pn;
 	solde = sol;
 	nom = n;
+	courante = nullptr;
 }
 
+Case* joueur::getCase() {
+	return this->courante;
+}
+
+void joueur::setCase(Case* c) {
+	this->courante = c;
+}
 
 void joueur::operation() {
 }

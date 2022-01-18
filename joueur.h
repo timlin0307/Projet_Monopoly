@@ -9,15 +9,17 @@
 #define JOUEUR_H_
 #include <iostream>
 #include <string>
-
-
 using namespace std;
+
+class Case;
+
 
 class joueur {
 private:
 	int pionNum = 0;
 	int solde;
 	string nom;
+	Case* courante;
 public:
 	joueur(int pn, int sol, string n);
 	void operation();
@@ -30,6 +32,8 @@ public:
 	void crediter(int);
 	void debiter(int);
 	void afficheNom();
+	Case* getCase();
+	void setCase(Case*);
 };
 
 #endif /* JOUEUR_H_ */

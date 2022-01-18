@@ -1,12 +1,12 @@
 /*
  * Case.cpp
  *
- *  Created on: 22 dÃ©c. 2021
+ *  Created on: 22 déc. 2021
  *      Author: neyre
  */
 
 #include "Case.h"
-#include "Joueur.h"
+#include "joueur.h"
 #include "Plateau.h"
 #include <iostream>
 using namespace std;
@@ -14,6 +14,7 @@ using namespace std;
 Case::Case(string nom) {
 	this->nom = nom;
 	this->suivante = nullptr;
+	this->numCase = 0;
 }
 
 string Case::getNom() {
@@ -36,19 +37,26 @@ void Case::affiche() {
 	cout << nom << endl;
 }
 
-void Case::arreterSur(Joueur* j, int de) {
-	cout << "Fonction virtuelle gÃ©nÃ©rique" << endl;
+void Case::arreterSur(joueur* j, int de) {
+	cout << "Fonction virtuelle générique" << endl;
 }
 
-Case* Case::deplacement(Joueur* j, int de) {
+Case* Case::deplacement(joueur* j, int de) {
 	Case* casesuivante = suivante ;
 	Case* casecourante = casesuivante ;
 	for (int i=0; i<de; i++) {
 		casecourante = casesuivante;
 		casesuivante = casecourante->getSuivante() ;
 	}
-	cout << "Vous Ãªtes arrivÃ©(e) sur la case : " << casecourante->getNom() << endl;
+	cout << "Vous êtes arrivé(e) sur la case : " << casecourante->getNom() << endl;
 	return casecourante;
 }
 
+void Case::setNum(int num) {
+	numCase = num;
+}
+
+int Case::getNum() {
+	return numCase;
+}
 

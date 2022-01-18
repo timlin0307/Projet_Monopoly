@@ -13,7 +13,9 @@ using namespace std;
 jeu::jeu(){
 	tourdejeu=0;
 	cout<<"Combien y-a-t-il de joueurs ?"<<endl;
-	cin>>nb_joueurs;
+	int N;
+	cin>>N;
+	this->nb_joueurs = N;
 	//this->nb_joueurs=nb_joueurs;
 	joueurs=nullptr;
 }
@@ -39,8 +41,8 @@ void jeu::setJoueurs(){
 	joueurs = new joueur*[nb_joueurs];
 	cout << "Qui sont les joueurs ?" << endl;
 	for(int i=0; i<nb_joueurs ; i++){
-		string nom;
 		cout << "Joueur " << i << endl;
+		string nom;
 		cin >> nom;
 		cin.clear();
 		joueur joue = joueur(i, money, nom);
@@ -55,7 +57,6 @@ joueur** jeu::getJoueurs(){
 
 void jeu::afficheJoueurs() {
 	for (int i=0; i<nb_joueurs; i++) {
-		string name = joueurs[i]->getNom();
-		cout << name << endl;
+		(*joueurs[i]).afficheNom();
 	}
 }

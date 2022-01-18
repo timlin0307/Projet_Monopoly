@@ -13,7 +13,7 @@ using namespace std;
 
 class jeu {
 protected :
-	joueur**joueurs;
+	joueur** joueurs;
 	int tourdejeu;
 	int nb_joueurs;
 

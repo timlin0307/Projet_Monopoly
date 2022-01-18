@@ -20,7 +20,7 @@
 #include <vector>
 using namespace std;
 
-void Plateau::ajouterCase(string nom) {
+void Plateau::ajouterCase(string nom, int i) {
 	
 	string sep = "-";
 	vector<string> words{};
@@ -34,36 +34,43 @@ void Plateau::ajouterCase(string nom) {
 	
 	if (type=="TERRAIN") {
 		Case* premiere = new Case(nom);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="GARE") {
 		Case* premiere = new Gare(nom, 50, 50, "", 25);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="COMPAGNIE") {
 		Case* premiere = new Compagnie(nom, 50, 50, "", 25);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="CHANCE") {
 		Case* premiere = new Chance(nom, "chance.txt");
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="COMMUNAUTE") {
 		Case* premiere = new Communaute(nom, "communaute.txt");
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="PRISON") {
 		Case* premiere = new Case(nom);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="TAXE") {
 		Case* premiere = new Case(nom);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
@@ -74,6 +81,7 @@ void Plateau::ajouterCase(string nom) {
 	}
 	else {
 		Case* premiere = new Case(nom);
+		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
@@ -104,7 +112,7 @@ Plateau::Plateau() {
 	premiere->setSuivante(tete);
 	tete = premiere;
 	for (int i=0; i<40; i++) {
-		Plateau::ajouterCase(tab[i]);
+		Plateau::ajouterCase(tab[i], 39-i);
 	}
 	premiere->setSuivante(tete);
 }

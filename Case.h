@@ -1,29 +1,32 @@
 /*
  * Case.h
  *
- *  Created on: 22 dÃ©c. 2021
+ *  Created on: 22 déc. 2021
  *      Author: neyre
  */
 
 #ifndef CASE_H_
 #define CASE_H_
-#include "Joueur.h"
+#include "joueur.h"
 #include <iostream>
 using namespace std;
 
 class Case {
-    protected:
+protected:
 	string nom;
 	Case* suivante;
-    public:
+	int numCase;
+public:
 	Case(string);
-	virtual void arreterSur(Joueur*, int);
+	virtual void arreterSur(joueur*, int);
 	string getNom();
 	Case* getSuivante();
 	void setNom(string);
 	void setSuivante(Case*);
 	void affiche();
-	Case* deplacement(Joueur*, int);
+	Case* deplacement(joueur*, int);
+	void setNum(int);
+	int getNum();
 };
 
 

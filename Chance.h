@@ -8,21 +8,21 @@
 #ifndef CHANCE_H_
 #define CHANCE_H_
 #include "Case.h"
-#include "Joueur.h"
+#include "joueur.h"
 #include <iostream>
 using namespace std;
 
 class Chance : public Case {
-    protected:
+private:
 	void melanger();
 	string fileName;
 	
-    public:
+public:
 	Chance(string, string);
 	string* lecture();
 	void ecriture(string*);
 	string piocher();
-	void arreterSur(Joueur*, int);
+	void arreterSur(joueur*, int);
 };
 
 

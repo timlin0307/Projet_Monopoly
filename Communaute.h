@@ -1,29 +1,29 @@
 /*
  * Communaute.h
  *
- *  Created on: 22 dÃ©c. 2021
+ *  Created on: 22 déc. 2021
  *      Author: neyre
  */
 
 #ifndef COMMUNAUTE_H_
 #define COMMUNAUTE_H_
 #include "Case.h"
-#include "Joueur.h"
+#include "joueur.h"
 
 #include <iostream>
 using namespace std;
 
 class Communaute : public Case {
-    protected:
+private:
 	void melanger();
 	string fileName;
 	
-    public:
+public:
 	Communaute(string, string);
 	string piocher();
 	string* lecture();
 	void ecriture(string*);
-	void arreterSur(Joueur*, int);
+	void arreterSur(joueur*, int);
 };
 
 

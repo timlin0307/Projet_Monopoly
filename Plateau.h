@@ -1,7 +1,7 @@
 /*
  * Plateau.h
  *
- *  Created on: 22 dÃ©c. 2021
+ *  Created on: 22 déc. 2021
  *      Author: neyre
  */
 
@@ -12,11 +12,11 @@
 using namespace std;
 
 class Plateau {
-    protected:
+protected:
 	Case* tete;
-	void ajouterCase(string);
+	void ajouterCase(string, int);
 	string* lecture();
-    public:
+public:
 	Plateau();
 	void affiche();
 	Case* getCase(int);
