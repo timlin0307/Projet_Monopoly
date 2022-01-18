@@ -14,7 +14,7 @@ Pion::Pion(Joueur* j, Case* p, string n) {
 }
 
 Joueur* Pion::getJoueur() {
-	return Joueur;
+	return joueur;
 }
 
 Case* Pion::getPosition() {
@@ -25,8 +25,8 @@ string Pion::getNom() {
 	return nom;
 }
 
-void Pion::setJoueur(joueur* j) {
-	Joueur = j;
+void Pion::setJoueur(Joueur* j) {
+	joueur = j;
 }
 
 void Pion::setPosition(Case* p) {
