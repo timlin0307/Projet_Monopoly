@@ -14,6 +14,7 @@ Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	nom = n;
 	nb_gare = nbg;
 	nb_comp = nbc;
+	courante = nullptr;
 }
 
 void Joueur::operation() {
@@ -64,4 +65,16 @@ void Joueur::crediter(int amount) {
 
 void Joueur::debiter(int amount) {
 	solde -= amount;
+}
+
+Case* Joueur::getCase() {
+	return this->courante;
+}
+
+void Joueur::setCase(Case* c) {
+	this->courante = c;
+}
+
+void Joueur::afficheNom() {
+	cout << nom << endl;
 }
