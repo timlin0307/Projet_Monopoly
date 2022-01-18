@@ -2,7 +2,7 @@
  * Joueur.h
  *
  *  Created on: 15 janv. 2022
- *      Author: lucas
+ *      Author: Yen-Ting Lin, lucas
  */
 
 #ifndef JOUEUR_H_
