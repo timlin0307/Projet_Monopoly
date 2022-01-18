@@ -18,7 +18,7 @@ Depart :: Depart (string nomcase, int prix)
 	gain = prix;
 }
 
-void Depart :: arreterSur(joueur * j, int de)
+void Depart :: arreterSur(Joueur * j, int de)
 {
 	j->crediter(gain);
 }
