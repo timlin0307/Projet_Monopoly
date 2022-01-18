@@ -18,8 +18,8 @@ class De {
 	int nbFaces;
 	int valeur;
     public:
-	de();
-	de(int nbFaces);
+	De();
+	De(int nbFaces);
 	int getNbfaces();
 	int getValeur();
 };
