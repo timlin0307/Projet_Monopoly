@@ -1,7 +1,7 @@
 /*
  * Terrain.cpp
  *
- *  Created on: 18 déc. 2021
+ *  Created on: 18 dÃ©c. 2021
  *      Author: lucas
  */
 
@@ -12,7 +12,7 @@ using namespace std;
 #include "Terrain.h"
 
 Terrain ::Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
-		int valhypo, string couleur, int * list_loyer, int prix_maison, int prix_hotel,int nb_maisons, bool hypotheque)
+		int valhypo, string couleur, int * list_loyer, int prix_maison, int prix_hotel, int nb_maisons, bool hypotheque)
 :Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
 {
 	this -> couleur = couleur;
@@ -31,17 +31,17 @@ void Terrain :: arreterSur(int de)
 		casecourante = casesuivante ;
 		casesuivante = *casecourante.getSuivante() ;
 	}
-	cout << "vous êtes sur la case" << casecourante.getNom() << endl;
+	cout << "vous Ãªtes sur la case" << casecourante.getNom() << endl;
 	if (nom_joueur == "")
 	{
-		cout << "la case n'appartient à personne" << endl;
+		cout << "la case n'appartient Ã  personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
 		cout << "souhaitez vous l'acheter ?" << endl;
 	}
 
 	else
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient Ã  " << nom_joueur << endl;
 	}
 }
 
@@ -59,7 +59,7 @@ void Terrain :: calcul_loyer()
 
 void Terrain :: set_NBmaisons(int n)
 {
-	nb_maisons = n;/* on doit avoir une construction uniforme et posséder tous les terrains de la couleur*/
+	nb_maisons = n;/* on doit avoir une construction uniforme et possÃ©der tous les terrains de la couleur*/
 }
 
 int Terrain :: get_NBmaisons()
