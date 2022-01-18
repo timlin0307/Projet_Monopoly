@@ -12,13 +12,13 @@
 #include <string>
 using namespace std;
 
-class joueur {
+class Joueur {
 	protected:
 		int pionNum = 0;
 		int solde;
 		string nom;
 	public:
-		joueur(int pn, int sol, string n);
+		Joueur(int pn, int sol, string n);
 		void operation();
 		string getNom();
 		int getPion();
