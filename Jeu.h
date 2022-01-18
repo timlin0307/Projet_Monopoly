@@ -24,6 +24,7 @@ class Jeu {
 	void setNbjoueurs(int nb_joueurs);
 	void setJoueurs();
 	Joueur** getJoueurs();
+	void afficheJoueurs();
 };
 
 
