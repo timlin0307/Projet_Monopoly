@@ -1,7 +1,7 @@
 /*
  * Compagnie.h
  *
- *  Created on: 18 déc. 2021
+ *  Created on: 18 d�c. 2021
  *      Author: lucas
  */
 
@@ -12,6 +12,8 @@
 #include <string>
 using namespace std;
 #include "Propriete.h"
+#include "Case.h"
+#include "Joueur.h"
 /* herite de propriete
  * protected : nom de la case
  *
@@ -20,13 +22,14 @@ using namespace std;
  *
  */
 
-class Compagnie : public Propriete {
-    protected:
-	/* rien à mettre on herite de propriete */
+class Compagnie : public Propriete
+{
+protected :
+	joueur * appartient_a;
 
-    public:
-	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false);
-	void arreterSur(int);
+public :
+	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, joueur* appartient_a= nullptr, bool hypotheque = false);
+	void arreterSur(joueur*, int);
 	void calcul_loyer(int de);
 
 
