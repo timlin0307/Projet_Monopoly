@@ -1,12 +1,12 @@
 /*
  * Case.cpp
  *
- *  Created on: 22 déc. 2021
+ *  Created on: 22 dÃ©c. 2021
  *      Author: neyre
  */
 
 #include "Case.h"
-#include "joueur.h"
+#include "Joueur.h"
 #include "Plateau.h"
 #include <iostream>
 using namespace std;
@@ -36,18 +36,18 @@ void Case::affiche() {
 	cout << nom << endl;
 }
 
-void Case::arreterSur(joueur* j, int de) {
-	cout << "Fonction virtuelle générique" << endl;
+void Case::arreterSur(Joueur* j, int de) {
+	cout << "Fonction virtuelle gÃ©nÃ©rique" << endl;
 }
 
-Case* Case::deplacement(joueur* j, int de) {
+Case* Case::deplacement(Joueur* j, int de) {
 	Case* casesuivante = suivante ;
 	Case* casecourante = casesuivante ;
 	for (int i=0; i<de; i++) {
 		casecourante = casesuivante;
 		casesuivante = casecourante->getSuivante() ;
 	}
-	cout << "Vous êtes arrivé(e) sur la case : " << casecourante->getNom() << endl;
+	cout << "Vous Ãªtes arrivÃ©(e) sur la case : " << casecourante->getNom() << endl;
 	return casecourante;
 }
 
