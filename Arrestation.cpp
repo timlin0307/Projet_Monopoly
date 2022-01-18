@@ -17,7 +17,7 @@ Arrestation  :: Arrestation (string nomcase, int num)
 	num_prison = num;
 }
 
-void Arrestation :: arreterSur(joueur * j, int de)
+void Arrestation :: arreterSur(Joueur * j, int de)
 {
 	/* changer la case*/
 }
