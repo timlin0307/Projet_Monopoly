@@ -40,7 +40,9 @@ void Jeu::setJoueurs(){
 	for(int i=0; i<nb_joueurs; i++) {
 		cout << "Qui est le joueur " << i+1 << " ? " << endl; // Pour plus de clarté pour le joueur, on fait commencer le numéro des joueurs à 1 (donc décale tout de 1)
 		cin >> nom;
-		joueurs[i] = new Joueur(i, money, nom, 0, 0); // On créé un nouvel objet Joueur pour chaque itération, que l'on met dans joueur[i]
+		joueurs[i] = new Joueur(i, money, nom, 0, 0); /* On créé un nouvel objet Joueur pour chaque itération, que l'on met dans joueur[i]
+		i correspond au numéro du pion associé au joueur (pour l'instant)
+		0 car 0 gares et 0 compagnies au début*/
 	}
 }
 
