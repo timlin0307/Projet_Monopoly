@@ -14,6 +14,7 @@ jeu::jeu(){
 	cout<<"Combien y-a-t-il de joueurs ?"<<endl;
 	cin>>nb_joueurs;
 	this->nb_joueurs=nb_joueurs;
+	joueurs=nullptr;
 }
 
 int jeu::compteur(){
@@ -30,4 +31,23 @@ int jeu::getNbjoueurs(){
 
 void jeu::setNbjoueurs(int nb_joueurs){
 	this->nb_joueurs=nb_joueurs;
+}
+
+void jeu::setJoueurs(){
+	int money;
+	money =5000;
+	joueurs=new joueur*[nb_joueurs];
+	cout<<"Qui sont les joueurs ?"<<endl;
+	for(int i=0; i<nb_joueurs ; i++){
+		string nom;
+		cout<<"joueur" <<i<<endl;
+		cin>>nom;
+		joueur joue =joueur(i,money, nom);
+		joueur* personne= &joue;
+		joueurs[i] = personne;
+	}
+}
+
+joueur** jeu::getJoueurs(){
+	return joueurs;
 }
