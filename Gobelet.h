@@ -1,21 +1,21 @@
 /*
- * gobelet.h
+ * Gobelet.h
  *
- *  Created on: 17 déc. 2021
+ *  Created on: 17 dÃ©c. 2021
  *      Author: basti
  */
-#include "de.h"
+#include "De.h"
 #include <iostream>
 #include <random>
 #include <ctime>
 
 #ifndef GOBELET_H_
 #define GOBELET_H_
-class gobelet : public de {
-private :
-	de des[2];
-public :
-	gobelet();
+class Gobelet : public De {
+    protected:
+	De des[2];
+    public:
+	Gobelet();
 	int getValeur();
 	bool Double();
 };
