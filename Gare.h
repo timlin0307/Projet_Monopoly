@@ -1,7 +1,7 @@
 /*
  * Gare.h
  *
- *  Created on: 18 déc. 2021
+ *  Created on: 18 dÃ©c. 2021
  *      Author: lucas
  */
 
@@ -21,12 +21,11 @@ using namespace std;
  *
  */
 
-class Gare : public Propriete
-{
-protected :
-	/* rien à mettre on herite de propriete */
+class Gare : public Propriete {
+    protected :
+	/* rien Ã  mettre on herite de propriete */
 
-public :
+    public :
 	Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false);
 	void arreterSur(int);
 	void calcul_loyer();
