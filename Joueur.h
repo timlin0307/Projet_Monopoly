@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <"Case.h">
 using namespace std;
 
 class Joueur {
@@ -19,6 +20,7 @@ class Joueur {
 		string nom;
 		int nb_gare;
 		int nb_comp;
+		Case* courante;
 	public:
 		Joueur(int pn, int sol, string n, int nbg, int nbc);
 		void operation();
@@ -34,6 +36,9 @@ class Joueur {
 		void jouer();
 		void crediter(int);
 		void debiter(int);
+		void afficheNom();
+		Case* getCase();
+		void setCase(Case*);
 };
 
 
