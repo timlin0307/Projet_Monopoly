@@ -13,7 +13,6 @@ Jeu::Jeu(){
 	tourdejeu = 0;
 	cout << "Combien y-a-t-il de joueurs ?" << endl;
 	cin >> nb_joueurs;
-	this->nb_joueurs = nb_joueurs;
 	joueurs = nullptr;
 }
 
@@ -34,20 +33,22 @@ void Jeu::setNbjoueurs(int nb_joueurs){
 }
 
 void Jeu::setJoueurs(){
-	int money;
-	money = 5000;
-	joueurs = new Joueur*[nb_joueurs];
-	cout << "Qui sont les joueurs ?" << endl;
-	for(int i=0; i<nb_joueurs ; i++){
-		string nom;
-		cout << "joueur" << i << endl;
+	int money = 5000;
+	string nom;
+	this->joueurs[nb_joueurs] = {0};
+	for(int i=0; i<nb_joueurs; i++) {
+		cout << "Qui est le joueur " << i+1 << " ? " << endl;
 		cin >> nom;
-		Joueur joue = joueur(i, money, nom);
-		Joueur* personne = &joue;
-		joueurs[i] = personne;
+		joueurs[i] = new Joueur(i, money, nom, 0, 0);
 	}
 }
 
 Joueur** Jeu::getJoueurs(){
 	return joueurs;
+}
+
+void jeu::afficheJoueurs() {
+	for (int i=0; i<nb_joueurs; i++) {
+		(*joueurs[i]).afficheNom();
+	}
 }
