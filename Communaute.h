@@ -1,14 +1,14 @@
 /*
  * Communaute.h
  *
- *  Created on: 22 déc. 2021
+ *  Created on: 22 dÃ©c. 2021
  *      Author: neyre
  */
 
 #ifndef COMMUNAUTE_H_
 #define COMMUNAUTE_H_
 #include "Case.h"
-#include "joueur.h"
+#include "Joueur.h"
 
 #include <iostream>
 using namespace std;
@@ -23,7 +23,7 @@ public:
 	string piocher();
 	string* lecture();
 	void ecriture(string*);
-	void arreterSur(joueur*, int);
+	void arreterSur(Joueur*, int);
 };
 
 
