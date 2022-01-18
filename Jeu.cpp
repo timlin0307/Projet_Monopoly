@@ -1,5 +1,5 @@
 /*
- * jeu.cpp
+ * Jeu.cpp
  *
  *  Created on: 1 janv. 2022
  *      Author: basti
