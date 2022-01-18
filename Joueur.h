@@ -29,8 +29,8 @@ class Joueur {
 		int getNbCompagnie();
 		void setPion(int);
 		void setSolde(int sol);
-		void setNbGare();
-		void setNbCompagnie();
+		void setNbGare(int nbGare);
+		void setNbCompagnie(int nbComp);
 		void jouer();
 		void crediter(int);
 		void debiter(int);
