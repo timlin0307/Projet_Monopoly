@@ -19,7 +19,7 @@ protected:
 
 public:
 	Arrestation (string nom, int num);
-	void arreterSur(joueur * , int );
+	void arreterSur(Joueur * , int );
 };
 
 
