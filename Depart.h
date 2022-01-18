@@ -19,7 +19,7 @@ protected:
 
 public:
 	Depart (string nom, int prix);
-	void arreterSur(joueur * , int );
+	void arreterSur(Joueur * , int );
 };
 
 
