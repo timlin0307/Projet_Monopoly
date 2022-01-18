@@ -23,8 +23,12 @@ class Joueur {
 		string getNom();
 		int getPion();
 		int getSolde();
+		int getNbGare();
+		int getNbCompagnie();
 		void setPion(int);
 		void setSolde(int sol);
+		void setNbGare(int nbG);
+		void setNbCompagnie(int nbC);
 		void jouer();
 		void crediter(int);
 		void debiter(int);
