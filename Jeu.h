@@ -23,8 +23,9 @@ class Jeu {
 	int getNbjoueurs();
 	void setNbjoueurs(int nb_joueurs);
 	void setJoueurs();
-	Joueur* getJoueurs(int index);
+	Joueur** getJoueurs();
 	void afficheJoueurs();
+	string getJoueur_actuel();
 };
 
 
