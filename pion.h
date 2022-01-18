@@ -25,7 +25,7 @@ class pion {
 		Case* getPosition();
 		string getNom();
 		void setJoueur(joueur* j);
-		void setPosition(int p);
+		void setPosition(Case* p);
 		void setNom(string n);
 		void setPion();
 		void deplacer();
