@@ -14,9 +14,9 @@
 #include <algorithm>
 using namespace std;
 
-void Chance::melanger() {							// pour mélanger le paquet de cartes
+void Chance::melanger() {							// pour mÃ©langer le paquet de cartes
 	string* tab = Chance::lecture();
-	random_shuffle(tab, tab+16);					// échange l'étiquetage entre valeurs et adresses
+	random_shuffle(tab, tab+16);					// Ã©change l'Ã©tiquetage entre valeurs et adresses
 	Chance::ecriture(tab);
 }
 	
@@ -37,7 +37,7 @@ string* Chance::lecture() {							// pour lire dans le fichier txt
 	return res;
 }
 
-void Chance::ecriture(string* tab) {				// pour écrire dans le txt
+void Chance::ecriture(string* tab) {				// pour Ã©crire dans le txt
 	string const nomFichier(this->fileName);
 	ofstream monFlux(nomFichier.c_str());
 	if(monFlux)	{
@@ -50,13 +50,13 @@ void Chance::ecriture(string* tab) {				// pour écrire dans le txt
 }
 
 
-Chance::Chance(string nom, string fileName):Case(nom) {				// constructeur d'une case Chance, qui mélange une fois le paquet en début de partie
+Chance::Chance(string nom, string fileName):Case(nom) {				// constructeur d'une case Chance, qui mÃ©lange une fois le paquet en dÃ©but de partie
 	this->fileName = fileName;
 	Chance::melanger();
 }
 
-string Chance::piocher() {							// pioche la première carte du paquet et la remet au talon
-	cout << "Vous avez pioché la carte : " << endl;
+string Chance::piocher() {							// pioche la premiÃ¨re carte du paquet et la remet au talon
+	cout << "Vous avez piochÃ© la carte : " << endl;
 	string* tab = Chance::lecture();
 	string* newTab = new string[16];
 	for (int i = 0; i < 15; i++) {
@@ -67,16 +67,16 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	return tab[0];
 }
 
-void Chance::arreterSur(joueur* j, int de) {
-	cout << "Fonction virtuelle redéfinie dans une classe dérivée" << endl;
+void Chance::arreterSur(Joueur* j, int de) {
+	cout << "Fonction virtuelle redÃ©finie dans une classe dÃ©rivÃ©e" << endl;
 	string ligne = Chance::piocher();
 		
 	string sep = "-";
 	vector<string> words{};
 	size_t pos;
-	while ((pos = ligne.find(sep)) != string::npos) {// tant qu'on trouve un caractère séparateur
+	while ((pos = ligne.find(sep)) != string::npos) {// tant qu'on trouve un caractÃ¨re sÃ©parateur
 		words.push_back(ligne.substr(0, pos));		// comme un append
-		ligne.erase(0, pos + sep.length());			// on supprime ce qui a déjà été examiné
+		ligne.erase(0, pos + sep.length());			// on supprime ce qui a dÃ©jÃ  Ã©tÃ© examinÃ©
 	}
 	
 	cout << ligne << endl;
@@ -87,7 +87,7 @@ void Chance::arreterSur(joueur* j, int de) {
 	else if (type=="GAIN") {
 		string montant = words[1];
 		int credit = stoi(montant);
-		cout << "Vous avez pioché une carte qui vous fait gagner de l'argent +" << credit << " euros" << endl;
+		cout << "Vous avez piochÃ© une carte qui vous fait gagner de l'argent +" << credit << " euros" << endl;
 		j->crediter(credit);
 	}
 	else if (type=="LIBERE") {
@@ -96,10 +96,10 @@ void Chance::arreterSur(joueur* j, int de) {
 	else if (type=="PERTE") {
 		string montant = words[1];
 		int debit = stoi(montant);
-		cout << "Vous avez pioché une carte qui vous fait perdre de l'argent -" << debit << " euros" << endl;
+		cout << "Vous avez piochÃ© une carte qui vous fait perdre de l'argent -" << debit << " euros" << endl;
 		j->debiter(debit);
 	}
 	else if (type=="REPARATION") {
-		cout << "réparation" << endl;
+		cout << "rÃ©paration" << endl;
 	}
 }
