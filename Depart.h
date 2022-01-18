@@ -14,10 +14,10 @@
 using namespace std;
 
 class Depart : public Case {
-protected:
+    protected:
 	int gain;
 
-public:
+    public:
 	Depart (string nom, int prix);
 	void arreterSur(Joueur * , int );
 };
