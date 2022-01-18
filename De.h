@@ -1,7 +1,7 @@
 /*
- * de.h
+ * De.h
  *
- *  Created on: 17 déc. 2021
+ *  Created on: 17 dÃ©c. 2021
  *      Author: basti
  */
 #include <stdio.h>
@@ -13,11 +13,11 @@ using namespace std;
 
 #ifndef DE_H_
 #define DE_H_
-class de{
-protected :
+class De {
+    protected:
 	int nbFaces;
 	int valeur;
-public:
+    public:
 	de();
 	de(int nbFaces);
 	int getNbfaces();
