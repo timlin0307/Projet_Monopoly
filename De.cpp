@@ -7,11 +7,11 @@
 
 #include "De.h"
 
-De::de() {
+De::De() {
 	nbFaces = 6 ;
 	this->valeur = 1 + rand() % 6;
 }
-De::de(int nbFaces){
+De::De(int nbFaces){
 	this->nbFaces = nbFaces;
 	valeur = 1 + rand() % nbFaces;
 }
