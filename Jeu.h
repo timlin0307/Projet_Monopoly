@@ -13,7 +13,7 @@ using namespace std;
 
 class Jeu {
     protected:
-	Joueur* *joueurs;
+	Joueur* joueurs[];
 	int tourdejeu;
 	int nb_joueurs;
 
@@ -23,7 +23,7 @@ class Jeu {
 	int getNbjoueurs();
 	void setNbjoueurs(int nb_joueurs);
 	void setJoueurs();
-	Joueur** getJoueurs();
+	Joueur* getJoueurs(int index);
 	void afficheJoueurs();
 };
 
