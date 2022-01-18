@@ -6,44 +6,44 @@
  */
 
 
-#include "joueur.h"
+#include "Joueur.h"
 
-joueur::joueur(int pn, int sol, string n) {
+Joueur::Joueur(int pn, int sol, string n) {
 	pionNum = pn;
 	solde = sol;
 	nom = n;
 }
 
-void joueur::operation() {
+void Joueur::operation() {
 }
 
-string joueur::getNom() {
+string Joueur::getNom() {
 	return nom;
 }
 
-int joueur::getPion() {
+int Joueur::getPion() {
 	return pionNum;
 }
 
-int joueur::getSolde() {
+int Joueur::getSolde() {
 	return solde;
 }
 
-void joueur::setPion(int pn) {
+void Joueur::setPion(int pn) {
 	pionNum = pn;
 }
 
-void joueur::setSolde(int sol) {
+void Joueur::setSolde(int sol) {
 	solde = sol;
 }
 
-void joueur::jouer() {
+void Joueur::jouer() {
 }
 
-void joueur::crediter(int amount) {
+void Joueur::crediter(int amount) {
 	solde += amount;
 }
 
-void joueur::debiter(int amount) {
+void Joueur::debiter(int amount) {
 	solde -= amount;
 }
