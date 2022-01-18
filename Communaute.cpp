@@ -1,12 +1,12 @@
 /*
  * Communaute.cpp
  *
- *  Created on: 22 dÈc. 2021
+ *  Created on: 22 d√©c. 2021
  *      Author: neyre
  */
 
 #include "Communaute.h"
-#include "joueur.h"
+#include "Joueur.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -22,7 +22,7 @@ string* Communaute::lecture() {					// pour lire dans le fichier txt
 	if(monFlux) {
 	   	int i = 0;
 	    string ligne;
-	    while (getline(monFlux,ligne)) {
+	    while (getline(monFlux, ligne)) {
 	      	tab[i] = ligne;   
 	    	i++;
 	   	}
@@ -32,7 +32,7 @@ string* Communaute::lecture() {					// pour lire dans le fichier txt
 	return res;
 }
 
-void Communaute::ecriture(string* tab) {		// pour Ècrire dans le fichier txt
+void Communaute::ecriture(string* tab) {		// pour √©crire dans le fichier txt
 	string const nomFichier(this->fileName);
 	ofstream monFlux(nomFichier.c_str());
 	if(monFlux)	{
@@ -44,14 +44,14 @@ void Communaute::ecriture(string* tab) {		// pour Ècrire dans le fichier txt
 	monFlux.close();
 }
 
-void Communaute::melanger() {   				// pour mÈlanger le paquet de cartes
+void Communaute::melanger() {   				// pour m√©langer le paquet de cartes
 	string* tab = Communaute::lecture();
 	random_shuffle(tab, tab+16);
 	Communaute::ecriture(tab);
 }
 
 string Communaute::piocher() {					// pioche la premiere carte du paquet et la remet au talon
-	cout << "Vous avez piochÈ la carte : " << endl;
+	cout << "Vous avez pioch√© la carte : " << endl;
 	string* tab = Communaute::lecture();
 	string* newTab = new string[16];
 	for (int i = 0; i < 15; i++) {
@@ -62,22 +62,22 @@ string Communaute::piocher() {					// pioche la premiere carte du paquet et la r
 	return tab[0];
 }
 
-Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur qui mÈlange une fois le paquet en dÈbut de partie
+Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur qui m√©lange une fois le paquet en d√©but de partie
 	this->fileName = fileName;
 	Communaute::melanger();
 }
 
 
-void Communaute::arreterSur(joueur* j, int de) {
-	cout << "Fonction virtuelle redÈfinie dans une classe dÈrivÈe" << endl;
+void Communaute::arreterSur(Joueur* j, int de) {
+	cout << "Fonction virtuelle red√©finie dans une classe d√©riv√©e" << endl;
 	string ligne = Communaute::piocher();
 	
 	string sep = "-";
 	vector<string> words{};
 	size_t pos;
-	while ((pos = ligne.find(sep)) != string::npos) {// tant qu'on trouve un caractËre sÈparateur
+	while ((pos = ligne.find(sep)) != string::npos) {// tant qu'on trouve un caract√®re s√©parateur
 		words.push_back(ligne.substr(0, pos));		// comme un append
-	    ligne.erase(0, pos + sep.length());			// on supprime ce qui a dÈj‡ ÈtÈ examinÈ
+	    ligne.erase(0, pos + sep.length());			// on supprime ce qui a d√©j√† √©t√© examin√©
 	}
 	cout << ligne << endl;
 	string type = words[0];
@@ -87,7 +87,7 @@ void Communaute::arreterSur(joueur* j, int de) {
 	else if (type=="GAIN") {
 		string montant = words[1];
 		int credit = stoi(montant);
-		cout << "Vous avez piochÈ une carte qui vous fait gagner de l'argent +" << credit << " euros" << endl;
+		cout << "Vous avez pioch√© une carte qui vous fait gagner de l'argent +" << credit << " euros" << endl;
 		j->crediter(credit);
 	}
 	else if (type=="LIBERE") {
@@ -96,14 +96,14 @@ void Communaute::arreterSur(joueur* j, int de) {
 	else if (type=="PERTE") {		
 		string montant = words[1];
 		int debit = stoi(montant);
-		cout << "Vous avez piochÈ une carte qui vous fait perdre de l'argent -" << debit << " euros" << endl;
+		cout << "Vous avez pioch√© une carte qui vous fait perdre de l'argent -" << debit << " euros" << endl;
 		j->debiter(debit);
 	}
 	else if (type=="DILEMNE") {
 		cout << "dilemne" << endl;
 	}
 	else if (type=="PION") {
-		cout << "Vous avez piochÈ une carte qui vous ordonne de vous dÈplacer" << endl;
+		cout << "Vous avez pioch√© une carte qui vous ordonne de vous d√©placer" << endl;
 		string numero = words[1];
 		//int num = stoi(numero);
 		cout << numero << endl;
