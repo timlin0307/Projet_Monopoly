@@ -14,10 +14,10 @@
 using namespace std;
 
 class Arrestation : public Case {
-    protected:
+protected:
 	int num_prison;
 
-    public:
+public:
 	Arrestation (string nom, int num);
 	void arreterSur(Joueur * , int );
 };

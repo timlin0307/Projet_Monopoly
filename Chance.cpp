@@ -67,7 +67,7 @@ string Chance::piocher() {							// pioche la première carte du paquet et la rem
 	return tab[0];
 }
 
-void Chance::arreterSur(joueur* j, int de) {
+void Chance::arreterSur(Joueur* j, int de) {
 	cout << "Fonction virtuelle redéfinie dans une classe dérivée" << endl;
 	string ligne = Chance::piocher();
 		

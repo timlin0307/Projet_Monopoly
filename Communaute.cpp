@@ -6,7 +6,7 @@
  */
 
 #include "Communaute.h"
-#include "joueur.h"
+#include "Joueur.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -68,7 +68,7 @@ Communaute::Communaute(string nom, string fileName):Case(nom) {	// constructeur 
 }
 
 
-void Communaute::arreterSur(joueur* j, int de) {
+void Communaute::arreterSur(Joueur* j, int de) {
 	cout << "Fonction virtuelle redéfinie dans une classe dérivée" << endl;
 	string ligne = Communaute::piocher();
 	

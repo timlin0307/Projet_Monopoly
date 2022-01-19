@@ -14,12 +14,14 @@
 using namespace std;
 
 class Taxe : public Case {
-    protected:
+protected:
 	int prix_a_payer;
 
-    public:
+public:
 	Taxe (string nom, int prix);
 	void arreterSur(Joueur * , int );
 };
+
+
 
 #endif /* TAXE_H_ */
