@@ -15,6 +15,7 @@ Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	nb_gare = nbg;
 	nb_comp = nbc;
 	courante = nullptr;
+	touche_200 = true;
 }
 
 void Joueur::operation() {
@@ -78,3 +79,17 @@ void Joueur::setCase(Case* c) {
 void Joueur::afficheNom() {
 	cout << nom << endl;
 }
+
+void Joueur :: set200(bool b)
+{
+	touche_200 = b;
+}
+
+bool Joueur :: get200()
+{
+	return (touche_200);
+}
+
+
+
+

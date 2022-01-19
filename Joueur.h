@@ -22,8 +22,10 @@ class Joueur {
 		int nb_gare;
 		int nb_comp;
 		Case* courante;
+		bool touche_200;
+
 	public:
-		Joueur(int pn, int sol, string n, int nbg=0, int nbc=0);
+		Joueur(int pn, int sol, string n, int nbg, int nbc);
 		void operation();
 		string getNom();
 		int getPion();
@@ -40,6 +42,8 @@ class Joueur {
 		void afficheNom();
 		Case* getCase();
 		void setCase(Case*);
+		void set200(bool);
+		bool get200();
 };
 
 
