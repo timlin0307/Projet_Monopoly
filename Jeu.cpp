@@ -60,5 +60,5 @@ void Jeu::afficheJoueurs(){
 
 // Retourne le nom du joueur qui doit jouer à ce tour
 string Jeu::getJoueur_actuel(){
-	return joueurs[tourdejeu-1]->getNom ; // On prend l'élément tourdejeu-1 car le compteur commence à 1 (décalé de 1 à droite)
+	return (*joueurs[tourdejeu-1]).getNom() ; // On prend l'élément tourdejeu-1 car le compteur commence à 1 (décalé de 1 à droite)
 }

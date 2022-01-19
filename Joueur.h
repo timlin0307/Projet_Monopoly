@@ -10,8 +10,9 @@
 
 #include <iostream>
 #include <string>
-#include <"Case.h">
 using namespace std;
+
+class Case;
 
 class Joueur {
 	protected:
@@ -22,7 +23,7 @@ class Joueur {
 		int nb_comp;
 		Case* courante;
 	public:
-		Joueur(int pn, int sol, string n, int nbg, int nbc);
+		Joueur(int pn, int sol, string n, int nbg=0, int nbc=0);
 		void operation();
 		string getNom();
 		int getPion();

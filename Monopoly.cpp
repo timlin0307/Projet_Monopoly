@@ -21,11 +21,11 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	Case* departure = plateau.getCase(2);
+	Case* departure = plateau.getCase(1);
 	departure->affiche();
 	cout << typeid(*departure).name() << endl;
 	
-	joueur j = joueur(0, 0, "Lucas");
+	Joueur j = Joueur(0, 0, "Lucas");
 	j.setCase(departure);
 	departure->arreterSur(&j, 6);
 	cout << j.getSolde() << endl;

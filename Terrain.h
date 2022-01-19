@@ -28,7 +28,7 @@ protected :
 
 public :
 	Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
-			int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons,Joueur* appartient_a= nullptr, bool hypotheque = false);
+			int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons=0,Joueur* appartient_a= nullptr, bool hypotheque = false);
 	void arreterSur(Joueur* j, int de);
 	void calcul_loyer();
 	int get_NBmaisons();

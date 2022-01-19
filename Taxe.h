@@ -9,17 +9,17 @@
 #define TAXE_H_
 
 #include "Case.h"
+#include "joueur.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Taxe : public Case {
-protected:
+private:
 	int prix_a_payer;
-
 public:
 	Taxe (string nom, int prix);
-	void arreterSur(Joueur * , int );
+	void arreterSur(Joueur* , int );
 };
 
 

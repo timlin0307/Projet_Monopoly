@@ -12,12 +12,11 @@
 using namespace std;
 
 class Jeu {
-    protected:
-	Joueur* joueurs[];
+protected:
 	int tourdejeu;
 	int nb_joueurs;
-
-    public:
+	Joueur* joueurs[];
+public:
 	Jeu();
 	int compteur();
 	int getNbjoueurs();
