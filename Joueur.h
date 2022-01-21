@@ -23,6 +23,9 @@ class Joueur {
 		int nb_comp;
 		Case* courante;
 		bool touche_200;
+		int tour_prison; /* -1 s'il n'est pas en prison ou juste en visite,
+							sinon affiche le nombre de tour qui lui reste à faire avant
+							d'être obliger de payer pour sortir */
 
 	public:
 		Joueur(int pn, int sol, string n, int nbg, int nbc);
@@ -44,6 +47,8 @@ class Joueur {
 		void setCase(Case*);
 		void set200(bool);
 		bool get200();
+		void setPrison(int);
+		int getPrison();
 };
 
 

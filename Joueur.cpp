@@ -16,6 +16,7 @@ Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	nb_comp = nbc;
 	courante = nullptr;
 	touche_200 = true;
+	tour_prison = -1;
 }
 
 void Joueur::operation() {
@@ -90,6 +91,15 @@ bool Joueur :: get200()
 	return (touche_200);
 }
 
+void Joueur :: setPrison(int n)
+{
+	tour_prison = n;
+}
+
+int Joueur :: getPrison()
+{
+	return tour_prison;
+}
 
 
 
