@@ -20,7 +20,7 @@ class Pion {
 		Case* Position;
 		string nom;
 	public:
-		pion(Joueur* j, Case* p, string n);
+		Pion(Joueur* j, Case* p, string n);
 		Joueur* getJoueur();
 		Case* getPosition();
 		string getNom();
