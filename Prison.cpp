@@ -26,8 +26,12 @@ int Prison :: sortir(Joueur *j) /* on retourne un int qui est la valeure du lanc
 		(*j).setPrison(-1);
 		Gobelet g = Gobelet();
 		int dep = g.getValeur();
+
+		return dep;
+		/*
 		Case * case_courante = (*j).getCase();
 		(*case_courante).deplacement(j, dep);
+		*/
 	}
 
 	else if ((*j).getPrison() == -1)
@@ -64,29 +68,38 @@ int Prison :: sortir(Joueur *j) /* on retourne un int qui est la valeure du lanc
 		{
 			if (sortir == 1 )
 			{
-				cout << " vous avez aller pouvoir lancer le dé " << endl;
+				cout << " vous avez payé vous allez pouvoir lancer le dé " << endl;
 				(*j).debiter(50);
 				(*j).setPrison(-1);
 				Gobelet g = Gobelet();
 				int dep = g.getValeur();
+				boucle = false;
+				return dep;
+				/*
 				Case * case_courante = (*j).getCase();
 				(*case_courante).deplacement(j, dep);
+				*/
 			}
 			else
 			{
 				cout << "si vous faites un double vous sortez " << endl;
 				Gobelet g = Gobelet();
+				boucle = false;
 				if (g.Double())
 				{
 					cout << "vous avez fait un double vous sortez de prison " << endl;
 					(*j).setPrison(-1);
 					int dep = g.getValeur();
+					return dep;
+					/*
 					Case * case_courante = (*j).getCase();
 					(*case_courante).deplacement(j, dep);
+					*/
 				}
 				else
 				{
 					cout << "vous n'avez pas fait de double vous restez en prison " << endl;
+					return 0;
 				}
 
 			}
