@@ -25,6 +25,8 @@ public :
 	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, Joueur* appartient_a= nullptr, bool hypotheque = false);
 	void arreterSur(Joueur*, int);
 	void calcul_loyer(int de);
+	Joueur * getJoueur();
+	void setJoueur(Joueur *);
 
 
 };

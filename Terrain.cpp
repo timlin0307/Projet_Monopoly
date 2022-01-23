@@ -108,7 +108,17 @@ void Terrain :: ajoute_maison()
 	}
 	catch (string except) {
 	cout << except << "\n" ;
-
-
 	}
+}
+
+
+
+Joueur * Terrain :: getJoueur()
+{
+	return appartient_a;
+}
+
+void Terrain :: setJoueur(Joueur * j)
+{
+	appartient_a = j;
 }

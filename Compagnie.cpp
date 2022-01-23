@@ -68,4 +68,12 @@ void Compagnie :: calcul_loyer(int de)
 }
 
 
+Joueur * Compagnie :: getJoueur()
+{
+	return appartient_a;
+}
 
+void Compagnie :: setJoueur(Joueur * j)
+{
+	appartient_a = j;
+}

@@ -7,6 +7,11 @@
 
 
 #include "Joueur.h"
+#include <typeinfo>
+#include "Propriete.h"
+#include "Terrain.h"
+#include "Gare.h"
+#include "Compagnie.h"
 
 Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	pionNum = pn;
@@ -106,3 +111,44 @@ void Joueur :: initCase(Plateau* board) {
 	courante = depart;
 }
 
+void Joueur :: hypothequer ()
+{
+	Case * case_courante = courante;
+	int encore = 1;
+	while (encore)
+	{
+		Case* casesuivante = (*case_courante).getSuivante();
+		for (int i=0; i<41; i++ )
+		{
+			if (typeid(*case_courante) == Propriete)
+			{
+				if (this == (*(*case_courante).getJoueur()) & !(*(*case_courante).getHypotheque()))
+				{
+					cout << "Voulez vous hypothequer ? " << (*case_courante).getNom() << endl;
+					cout << "Vous empaucherez " << case_courante->getvalhypo() << endl;
+					cout << "Si vous voulez hypothequer tapez 1 sinon tapez 0" << endl;
+					int hypo;
+					cin >> hypo;
+					if (hypo)
+					{
+						case_courante->setHypotheque(true);
+						solde += case_courante->getvalhypo();
+					}
+				}
+			}
+
+		case_courante = casesuivante ;
+		casesuivante = (*case_courante).getSuivante();
+
+
+		}
+		cout << "voulez revoir vos cases pour voir celles que vous voulez hypothequer si oui tapez 1 sinon tapez 0 " << endl;
+
+		cin >> encore ;
+	}
+}
+
+void Joueur :: revendre_maison ()
+{
+
+}

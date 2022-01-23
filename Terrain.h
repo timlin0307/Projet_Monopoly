@@ -22,17 +22,19 @@ protected :
 	string couleur;
 	int * list_loyer; /* terrain nu , 1 , 2 ,3 ,4 maisons, hotel -> on sait que liste de dim 6*/
 	int prix_maison;
-	int nb_maisons; /*! construction uniforme*/ /* 5 maisons = 1 hotel */
+	int nb_maisons;  /* 5 maisons = 1 hotel */
 	Joueur * appartient_a;
 
 
 public :
 	Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
-			int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons=0,Joueur* appartient_a= nullptr, bool hypotheque = false);
+			int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons =0,Joueur* appartient_a= nullptr, bool hypotheque = false);
 	void arreterSur(Joueur* j, int de);
 	void calcul_loyer();
 	int get_NBmaisons();
 	void ajoute_maison();
+	Joueur * getJoueur();
+	void setJoueur(Joueur *);
 
 
 };

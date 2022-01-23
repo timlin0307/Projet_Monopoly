@@ -49,3 +49,19 @@ string Propriete :: getNomJoueur()
 {
 	return(nom_joueur);
 }
+
+void Propriete :: setHypotheque(bool b)
+{
+	hypotheque = b;
+}
+
+
+bool Propriete :: getHypotheque()
+{
+	return hypotheque;
+}
+
+int Propriete :: getvalhypo()
+{
+	return val_hypotheque;
+}

@@ -60,4 +60,12 @@ void Gare :: calcul_loyer()
 	loyer = 25 * 2^(i);
 }
 
+Joueur * Gare :: getJoueur()
+{
+	return appartient_a;
+}
 
+void Gare :: setJoueur(Joueur * j)
+{
+	appartient_a = j;
+}

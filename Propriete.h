@@ -41,15 +41,9 @@ public :
 	void setNomJoueur(string);
 	string getNomJoueur();
 	void arreterSur(int);
-	/* calcul loyer
-	 * pour pouvoir faire différence batiment non batiment,
-	 * hypothèque ou non
-	 * tout les terrains de la même couleur ??
-	 * permet aussi de faire varier prix selon
-	 * nb de gare, nb de compagnie de service public
-	 *
-	 *
-	 *  */
+	void setHypotheque(bool);
+	bool getHypotheque();
+	int getvalhypo();
 };
 
 

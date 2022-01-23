@@ -51,6 +51,8 @@ class Joueur {
 		void setPrison(int);
 		int getPrison();
 		void initCase(Plateau*);
+		void hypothequer ();
+		void revendre_maison ();
 };
 
 
