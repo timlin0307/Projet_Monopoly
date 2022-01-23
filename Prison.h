@@ -9,12 +9,15 @@
 #define PRISON_H_
 #include <string>
 #include "Case.h"
+#include "Joueur.h"
+
 
 class Prison : public Case {
 private:
 	string nomcase;
 public:
 	Prison(string);
+	int sortir(Joueur *);
 };
 
 
