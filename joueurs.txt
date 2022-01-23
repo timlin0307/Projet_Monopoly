@@ -1,0 +1,7 @@
+joueurs ; joueur-1 ; joueur-2 ; joueur-3 ; joueur-4 ; joueur-5 ; joueur-6 ; joueur-7 ; joueur-8
+maisons (noms des maisons) ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0
+gare ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0
+compagnie ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0
+argent ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0
+case ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0
+carte-possede
