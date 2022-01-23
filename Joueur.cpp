@@ -102,7 +102,7 @@ int Joueur :: getPrison()
 }
 
 void Joueur :: initCase(Plateau* board) {
-	Case* depart = (*board).getCase(0);
-	this->setCase(depart);
+	Case* depart = board->getCase(41);
+	courante = depart;
 }
 

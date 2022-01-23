@@ -46,12 +46,6 @@ Case* Case::deplacement(Joueur* j, int de) {
 	Case* casecourante = casesuivante ;
 	for (int i=0; i<de; i++) {
 		casecourante = casesuivante;
-
-		if (((*casecourante).getNum() == 0) & ((*j).get200() == true))
-		{
-			(*j).crediter(200);
-		}
-
 		casesuivante = casecourante->getSuivante() ;
 	}
 	cout << "Vous êtes arrivé(e) sur la case : " << casecourante->getNom() << endl;

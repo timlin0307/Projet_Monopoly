@@ -11,6 +11,7 @@
 #include "Communaute.h"
 #include "jeu.h"
 #include "Chance.h"
+#include "Prison.h"
 #include <iostream>
 #include <string>
 #include <typeinfo>
@@ -21,15 +22,22 @@ int main() {
 	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	Case* departure = plateau.getCase(1);
+	
+	Jeu partie = Jeu();
+	partie.launchGame(&plateau);
+	
+	Case* departure = plateau.getCase(30);
 	departure->affiche();
 	cout << typeid(*departure).name() << endl;
 	
-	Joueur j = Joueur(0, 0, "Lucas");
+	Joueur j = Joueur(0, 0, "Lucas", 0, 0);
 	j.setCase(departure);
 	departure->arreterSur(&j, 6);
 	cout << j.getSolde() << endl;
-	//departure->deplacement(&j, 6);
+	Case* land = j.getCase();
+	cout << typeid(*land).name() << endl;
+	//(*land).sortir(&j);
+	departure->deplacement(&j, 6);
 	
 	/*Communaute com = Communaute("Caisse de com", "communaute.txt");
 	string s = com.piocher();

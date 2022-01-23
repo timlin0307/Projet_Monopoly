@@ -9,6 +9,8 @@
 #define JEU_H_
 #include <string>
 #include "Joueur.h"
+#include "Gobelet.h"
+#include "Case.h"
 using namespace std;
 
 class Plateau;
@@ -17,7 +19,7 @@ class Jeu {
 protected:
 	int tourdejeu;
 	int nb_joueurs;
-	Joueur* joueurs[];
+	Joueur** joueurs;
 public:
 	Jeu();
 	int compteur();

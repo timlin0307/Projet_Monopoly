@@ -25,6 +25,7 @@ void Arrestation :: arreterSur(Joueur * j, int de)
 	Case* landing = (*from).deplacement(j, 21);
 	cout <<"Vous êtes maintenant en prison " << (*landing).getNom() << endl;
 	cout << "Vous allez devoir attendre 3 tours ou payer " << endl;
+	(*j).setCase(landing);
 }
 
 
