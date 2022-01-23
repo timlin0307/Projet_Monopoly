@@ -14,11 +14,9 @@
 using namespace std;
 
 class Arrestation : public Case {
-protected:
-	int num_prison;
 
 public:
-	Arrestation (string nom, int num);
+	Arrestation(string nom);
 	void arreterSur(Joueur * , int );
 };
 

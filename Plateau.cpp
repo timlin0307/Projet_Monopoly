@@ -13,6 +13,7 @@
 #include "Chance.h"
 #include "Communaute.h"
 #include "Propriete.h"
+#include "Arrestation.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -86,6 +87,11 @@ void Plateau::ajouterCase(string nom, int i) {
 	}
 	else if (type=="GRATUIT") {
 		Case* premiere = new Case(nom);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="ARRESTATION") {
+		Case* premiere = new Arrestation(nom);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
