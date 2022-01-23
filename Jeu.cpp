@@ -13,6 +13,7 @@ Jeu::Jeu(){
 	tourdejeu = 0;  //on commence la préparation du jeu avec le compteur à 0
 	cout << "Combien y-a-t-il de joueurs ?" << endl;
 	cin >> nb_joueurs; // On demande et enregistre le nombre de joueurs
+	this->nb_joueurs=nb_joueurs;
 	joueurs[0] = nullptr;
 }
 
