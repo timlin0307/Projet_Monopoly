@@ -5,7 +5,6 @@
  *      Author: neyre
  */
 
-#include "Case.h"
 #include "Plateau.h"
 #include "Gare.h"
 #include "Terrain.h"

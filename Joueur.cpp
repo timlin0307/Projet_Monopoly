@@ -101,5 +101,8 @@ int Joueur :: getPrison()
 	return tour_prison;
 }
 
-
+void Joueur :: initCase(Plateau* board) {
+	Case* depart = (*board).getCase(0);
+	this->setCase(depart);
+}
 

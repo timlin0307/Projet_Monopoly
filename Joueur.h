@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include "Plateau.h"
 using namespace std;
 
 class Case;
@@ -49,6 +50,7 @@ class Joueur {
 		bool get200();
 		void setPrison(int);
 		int getPrison();
+		void initCase(Plateau*);
 };
 
 

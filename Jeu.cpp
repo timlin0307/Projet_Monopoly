@@ -53,7 +53,7 @@ Joueur** Jeu::getJoueurs(){
 void Jeu::afficheJoueurs(){
 	cout << "Liste des joueurs : " << "\n";
 	for(int i=0; i<nb_joueurs; i++) {
-		cout << joueurs[i]->getNom() << "\n"; // Affiche le nom de l'élément i de la liste joueurs (donc nom du joueur i+1)
+		cout << (*joueurs[i]).getNom() << "\n"; // Affiche le nom de l'élément i de la liste joueurs (donc nom du joueur i+1)
 	}
 	cout << "------------------" << endl;
 }
@@ -61,4 +61,16 @@ void Jeu::afficheJoueurs(){
 // Retourne le nom du joueur qui doit jouer à ce tour
 string Jeu::getJoueur_actuel(){
 	return (*joueurs[tourdejeu-1]).getNom() ; // On prend l'élément tourdejeu-1 car le compteur commence à 1 (décalé de 1 à droite)
+}
+
+void Jeu::launchGame(Plateau* board) {
+	setJoueurs();
+	afficheJoueurs();
+	for (int i=0; i<nb_joueurs; i++) {
+		(*joueurs[i]).initCase(board);
+	}
+	while (nb_joueurs > 1) {
+
+		compteur();
+	}
 }

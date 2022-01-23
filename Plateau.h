@@ -7,9 +7,10 @@
 
 #ifndef PLATEAU_H_
 #define PLATEAU_H_
-#include "Case.h"
 #include <iostream>
 using namespace std;
+
+class Case;
 
 class Plateau {
 protected:

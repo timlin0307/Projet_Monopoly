@@ -11,6 +11,8 @@
 #include "Joueur.h"
 using namespace std;
 
+class Plateau;
+
 class Jeu {
 protected:
 	int tourdejeu;
@@ -25,6 +27,7 @@ public:
 	Joueur** getJoueurs();
 	void afficheJoueurs();
 	string getJoueur_actuel();
+	void launchGame(Plateau*);
 };
 
 
