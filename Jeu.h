@@ -11,6 +11,7 @@
 #include "Joueur.h"
 #include "Gobelet.h"
 #include "Case.h"
+#include "Terrain.h"
 using namespace std;
 
 class Plateau;
@@ -26,10 +27,12 @@ public:
 	int getNbjoueurs();
 	void setNbjoueurs(int nb_joueurs);
 	void setJoueurs();
+	void lireJoueurs(Plateau*);
 	Joueur** getJoueurs();
 	void afficheJoueurs();
 	string getJoueur_actuel();
 	void launchGame(Plateau*);
+	void lirePartie(Plateau*);
 };
 
 
