@@ -18,7 +18,8 @@ protected:
 	int numCase;
 public:
 	Case(string);
-	virtual void arreterSur(Joueur*, int);
+	Case();
+	virtual void arreterSur(Joueur*, int) ;
 	string getNom();
 	Case* getSuivante();
 	void setNom(string);
@@ -27,6 +28,9 @@ public:
 	Case* deplacement(Joueur*, int);
 	void setNum(int);
 	int getNum();
+
+	void hypothequer (Joueur *, Plateau *);
+	void revendre_maison ();
 };
 
 

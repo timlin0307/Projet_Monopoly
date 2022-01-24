@@ -122,3 +122,36 @@ void Terrain :: setJoueur(Joueur * j)
 {
 	appartient_a = j;
 }
+
+
+// rajout
+
+Terrain :: Terrain()
+:Propriete()
+{
+	this -> couleur = "test";
+	this -> list_loyer = new int (1);
+	this -> prix_maison = 0;
+	this -> nb_maisons = 0;
+	this -> appartient_a = nullptr;
+}
+
+
+void Terrain :: ajout_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() & !(this->getHypotheque()))
+					{
+						cout << "Voulez vous hypothequer ? " << this->getNom() << endl;
+						cout << "Vous empaucherez " << this->getvalhypo() << endl;
+						cout << "Si vous voulez hypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(true);
+							(*j).crediter(this->getvalhypo());
+						}
+					}
+}
+
+

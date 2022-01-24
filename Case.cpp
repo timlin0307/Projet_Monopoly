@@ -10,6 +10,9 @@
 #include "Plateau.h"
 #include <iostream>
 using namespace std;
+#include <typeinfo>
+
+#include "Terrain.h"
 
 Case::Case(string nom) {
 	this->nom = nom;
@@ -60,3 +63,45 @@ int Case::getNum() {
 	return numCase;
 }
 
+
+
+void Case :: hypothequer (Joueur * j, Plateau *p)
+{
+
+	Terrain ter_test = Terrain();
+	int encore = 1;
+	cout << typeid(*(*p).getCase(1)).name() << endl;
+	while (encore)
+	{
+		for (int i=1; i<40; i++ )
+		{
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->ajout_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->ajout_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+
+
+		}
+		cout << "voulez revoir vos cases pour voir celles que vous voulez hypothequer si oui tapez 1 sinon tapez 0 " << endl;
+
+		cin >> encore ;
+	}
+}
+
+
+Case::Case()
+{
+	this->nom = "test";
+	this->suivante = nullptr;
+	this->numCase = 0;
+}

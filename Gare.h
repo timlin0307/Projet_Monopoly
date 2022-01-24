@@ -22,6 +22,7 @@ protected :
 
 public :
 	Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo,Joueur* appartient_a= nullptr, bool hypotheque = false);
+	Gare();
 	void arreterSur(Joueur* , int);
 	void calcul_loyer();
 	Joueur * getJoueur();

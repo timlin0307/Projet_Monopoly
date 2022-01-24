@@ -69,3 +69,9 @@ void Gare :: setJoueur(Joueur * j)
 {
 	appartient_a = j;
 }
+
+Gare :: Gare()
+:Propriete()
+{
+	appartient_a=nullptr;
+}

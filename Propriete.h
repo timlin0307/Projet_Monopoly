@@ -12,14 +12,7 @@
 using namespace std;
 #include "Case.h"
 
-/* herite de case
- * protected : nom de la case
- *
- * public : arreterSur()
- * getNom
- * setNom
- *
- */
+
 
 class Propriete : public Case
 {
@@ -34,6 +27,8 @@ protected :
 
 public :
 	Propriete(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, bool hypotheque = false );
+
+	Propriete();
 	void setLoyer(int);
 	int getLoyer();
 	void setPrixAchat(int);
@@ -44,6 +39,7 @@ public :
 	void setHypotheque(bool);
 	bool getHypotheque();
 	int getvalhypo();
+
 };
 
 
