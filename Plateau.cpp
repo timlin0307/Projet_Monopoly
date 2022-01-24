@@ -14,6 +14,9 @@
 #include "Propriete.h"
 #include "Arrestation.h"
 #include "Prison.h"
+#include "Depart.h"
+#include "Taxe.h"
+#include "Gratuit.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -80,19 +83,27 @@ void Plateau::ajouterCase(string nom, int i) {
 		this->tete = premiere;
 	}
 	else if (type=="TAXE") {
-		Case* premiere = new Case(nom);
+		int montant = stoi(words[1]);
+		Case* premiere = new Taxe(nom, montant);
 		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="GRATUIT") {
-		Case* premiere = new Case(nom);
+		Case* premiere = new Gratuit(nom);
 		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
 	}
 	else if (type=="ARRESTATION") {
 		Case* premiere = new Arrestation(nom);
+		(*premiere).setNum(i);
+		premiere->setSuivante(this->tete);
+		this->tete = premiere;
+	}
+	else if (type=="DEPART") {
+		int gain = 200;
+		Case* premiere = new Depart(nom, gain);
 		(*premiere).setNum(i);
 		premiere->setSuivante(this->tete);
 		this->tete = premiere;
