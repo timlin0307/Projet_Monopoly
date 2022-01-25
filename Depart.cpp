@@ -13,14 +13,12 @@ using namespace std;
 #include "Depart.h"
 
 Depart :: Depart (string nomcase, int prix)
-: Case(nomcase)
-{
-	gain = prix;
+	: Case(nomcase) {
+    gain = prix;
 }
 
-void Depart :: arreterSur(Joueur * j, int de)
-{
-	j->crediter(gain);
+void Depart :: arreterSur(Joueur * j, int de) {
+    j->crediter(gain);
 }
 
 
