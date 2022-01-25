@@ -12,11 +12,11 @@
 using namespace std;
 
 class Case {
-protected:
+    protected:
 	string nom;
 	Case* suivante;
 	int numCase;
-public:
+    public:
 	Case(string);
 	Case();
 	virtual void arreterSur(Joueur*, int) ;
