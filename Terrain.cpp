@@ -13,8 +13,10 @@ using namespace std;
 #include "Joueur.h"
 
 
-Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, string couleur,
-		   int * list_loyer, int prix_maison, int nb_maisons, Joueur* jref, bool hypotheque)
+Terrain :: Terrain(string nomcase, int loyer, int prixachat,
+		   string nomjoueur, int valhypo, string couleur,
+		   int * list_loyer, int prix_maison, int nb_maisons,
+		   Joueur* jref, bool hypotheque)
         : Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque ) {
     this -> couleur = couleur;
     this -> list_loyer = list_loyer;
