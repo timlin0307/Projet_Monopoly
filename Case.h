@@ -1,7 +1,7 @@
 /*
  * Case.h
  *
- *  Created on: 22 déc. 2021
+ *  Created on: 22 dÃ©c. 2021
  *      Author: neyre
  */
 
@@ -28,7 +28,6 @@ public:
 	Case* deplacement(Joueur*, int);
 	void setNum(int);
 	int getNum();
-
 	void hypothequer (Joueur *, Plateau *);
 	void revendre_maison ();
 };
