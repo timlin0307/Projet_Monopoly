@@ -23,3 +23,7 @@ int De::getNbfaces(){
 int De::getValeur(){
 	return valeur;
 }
+
+De::~De(){
+	delete valeur;
+}

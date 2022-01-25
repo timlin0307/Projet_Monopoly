@@ -15,13 +15,14 @@ using namespace std;
 #define DE_H_
 class De {
     protected:
-	int nbFaces;
-	int valeur;
+	  int nbFaces;
+	  int valeur;
     public:
-	De();
-	De(int nbFaces);
-	int getNbfaces();
-	int getValeur();
+	  De();
+	  De(int nbFaces);
+	  int getNbfaces();
+	  int getValeur();
+	  ~De();
 };
 
 
