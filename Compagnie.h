@@ -32,6 +32,8 @@ public :
 	void ajout_hypotheque(Joueur *);
 	void enleve_hypotheque(Joueur *);
 
+	void supprime(Joueur);
+
 
 };
 

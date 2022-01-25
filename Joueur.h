@@ -51,6 +51,10 @@ class Joueur {
 		void setPrison(int);
 		int getPrison();
 		void initCase(Plateau*);
+
+		~Joueur();
+		void supprime_Joueur(Plateau *);
+
 };
 
 

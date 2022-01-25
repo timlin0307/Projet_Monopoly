@@ -33,6 +33,8 @@ public:
 	void deshypothequer (Joueur *, Plateau *);
 	void revendre_maison (Joueur *, Plateau *);
 	void acheter_maison (Joueur *, Plateau *);
+
+	void suppr_joueur (Joueur *, Plateau *);
 };
 
 

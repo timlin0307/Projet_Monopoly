@@ -203,3 +203,33 @@ void Case :: acheter_maison (Joueur * j, Plateau *p)
 	}
 }
 
+void suppr_joueur (Joueur * j, Plateau * p)
+{
+	Compagnie cie_test = Compagnie();
+	Terrain ter_test = Terrain();
+	Gare gare_test = Gare();
+
+		for (int i=1; i<40; i++ )
+		{
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->supprime(*j);
+
+			}
+
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* gar =(*p).getCase(i);
+				((Gare*)gar)->supprime(*j);
+
+			}
+
+			if (typeid(*(*p).getCase(i)) == typeid(cie_test) )
+			{
+				Case* cie =(*p).getCase(i);
+				((Compagnie*)cie)->supprime(*j);
+
+			}
+		}
+}

@@ -7,6 +7,11 @@
 
 
 #include "Joueur.h"
+#include "Propriete.h"
+#include "Terrain.h"
+#include "Gare.h"
+#include "Compagnie.h"
+
 
 Joueur::Joueur(int pn, int sol, string n, int nbg, int nbc) {
 	pionNum = pn;
@@ -102,7 +107,18 @@ int Joueur :: getPrison()
 }
 
 void Joueur :: initCase(Plateau* board) {
-	Case* depart = board->getCase(40);
+	Case* depart = board->getCase(41);
 	courante = depart;
 }
 
+void Joueur :: supprime_Joueur(Plateau * p)
+{
+	Case* c = p->getCase(0);
+	c->suppr_joueur(this, p);
+}
+
+Joueur :: ~Joueur()
+{
+	solde = -1;
+	nb_gare =0;
+}

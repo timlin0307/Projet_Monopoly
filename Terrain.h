@@ -42,6 +42,8 @@ public :
 	void enleve_hypotheque(Joueur *);
 	void moins_maison(Joueur *);
 	void plus_maison(Joueur *);
+
+	void supprime(Joueur);
 };
 
 

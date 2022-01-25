@@ -262,3 +262,17 @@ void Terrain :: plus_maison(Joueur * j)
 		}
 	}
 }
+
+
+void Terrain :: supprime(Joueur j)
+{
+	if (j.getPion() == (*(this->getJoueur())).getPion())
+					{
+						this ->setJoueur(nullptr);
+						string joueur1 = "";
+						this -> setNomJoueur(joueur1);
+						this -> setHypotheque(false);
+						this -> set_NBmaisons(0);
+					}
+}
+

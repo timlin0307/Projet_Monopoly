@@ -119,3 +119,15 @@ void Compagnie :: enleve_hypotheque(Joueur *j)
 						}
 					}
 }
+
+void Compagnie :: supprime(Joueur j)
+{
+	if (j.getPion() == (*(this->getJoueur())).getPion())
+					{
+						this ->setJoueur(nullptr);
+						string joueur1 = "";
+						this -> setNomJoueur(joueur1);
+						this -> setHypotheque(false);
+					}
+}
+
