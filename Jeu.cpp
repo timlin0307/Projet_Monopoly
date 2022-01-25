@@ -6,6 +6,7 @@
  */
 
 #include "Jeu.h"
+#include "Prison.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -78,15 +79,25 @@ void Jeu::launchGame(Plateau* board) {
 	int de;
 	while (nb_joueurs > 1) {
 		cout << "C'est au tour de " << joueurs[tourdejeu-1]->getNom() << " de jouer" << endl;
-		Gobelet lancer = Gobelet();
-		de = lancer.getValeur();
-		cout << "Lancer de dé : " << de << endl;
-		Case* from = joueurs[tourdejeu-1]->getCase();
-		from->affiche();
-		Case* landing = from->deplacement(joueurs[tourdejeu-1], de);
-		landing->arreterSur(joueurs[tourdejeu-1], de);
-		joueurs[tourdejeu-1]->setCase(landing);
-		compteur();
+		if (joueurs[tourdejeu-1]->getPrison()!=-1) {
+			Case* c = joueurs[tourdejeu-1]->getCase();
+			int res = ((Prison*)c)->sortir(joueurs[tourdejeu-1]);
+			Case* landing = c->deplacement(joueurs[tourdejeu-1], res);
+			joueurs[tourdejeu-1]->setCase(landing);
+			landing->arreterSur(joueurs[tourdejeu-1], de);
+			compteur();
+		}
+		else {
+			Gobelet lancer = Gobelet();
+			de = lancer.getValeur();
+			cout << "Lancer de dé : " << de << endl;
+			Case* from = joueurs[tourdejeu-1]->getCase();
+			from->affiche();
+			Case* landing = from->deplacement(joueurs[tourdejeu-1], de);
+			joueurs[tourdejeu-1]->setCase(landing);
+			landing->arreterSur(joueurs[tourdejeu-1], de);
+			compteur();
+		}
 	}
 }
 
@@ -164,6 +175,12 @@ void Jeu::lireJoueurs(Plateau* board) {
 
 		Joueur* j = new Joueur(stoi(id), stoi(solde), name, Ngares, Ncies);
 		joueurs[k] = j;
+		int numcurrent = stoi(current);
+		joueurs[k]->setCase(board->getCase(numcurrent));
+		if (numcurrent==30) {
+			(joueurs[k]->getCase())->arreterSur(joueurs[k], 2);
+		}
+
 
 		vector<string>::iterator it;
 		for (it=numcases.begin(); it!=numcases.end(); it++) {
@@ -178,20 +195,33 @@ void Jeu::lireJoueurs(Plateau* board) {
 void Jeu::lirePartie(Plateau* board) {
 	lireJoueurs(board);
 	afficheJoueurs();
-	for (int i=0; i<nb_joueurs; i++) {
-		joueurs[i]->initCase(board);
-	}
 	int de;
 	while (nb_joueurs > 1) {
 		cout << "C'est au tour de " << joueurs[tourdejeu-1]->getNom() << " de jouer" << endl;
-		Gobelet lancer = Gobelet();
-		de = lancer.getValeur();
-		cout << "Lancer de dé : " << de << endl;
-		Case* from = joueurs[tourdejeu-1]->getCase();
-		from->affiche();
-		Case* landing = from->deplacement(joueurs[tourdejeu-1], de);
-		landing->arreterSur(joueurs[tourdejeu-1], de);
-		joueurs[tourdejeu-1]->setCase(landing);
+		if (joueurs[tourdejeu-1]->getPrison()!=-1) {
+			Case* c = joueurs[tourdejeu-1]->getCase();
+			int res = ((Prison*)c)->sortir(joueurs[tourdejeu-1]);
+			Case* landing = c->deplacement(joueurs[tourdejeu-1], res);
+			joueurs[tourdejeu-1]->setCase(landing);
+			landing->arreterSur(joueurs[tourdejeu-1], de);
+
+		}
+		else {
+			Gobelet lancer = Gobelet();
+			de = lancer.getValeur();
+			cout << "Lancer de dé : " << de << endl;
+			Case* from = joueurs[tourdejeu-1]->getCase();
+			from->affiche();
+			Case* landing = from->deplacement(joueurs[tourdejeu-1], de);
+			joueurs[tourdejeu-1]->setCase(landing);
+			landing->arreterSur(joueurs[tourdejeu-1], de);
+		}
+		if (joueurs[tourdejeu-1]->getSolde() <0) {
+			cout << "Le joueur " << joueurs[tourdejeu-1]->getNom() << " est éliminé" << endl;
+			joueurs[tourdejeu-1] = &(*joueurs[nb_joueurs-1]);
+			nb_joueurs-=1;
+		}
 		compteur();
 	}
+	cout << "Le gagnant est " << joueurs[0]->getNom() << endl;
 }

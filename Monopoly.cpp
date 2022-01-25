@@ -24,10 +24,23 @@ int main() {
 	
 	//PREMIER SCENARIO : Début de partie
 	
-	Plateau plateau = Plateau();
+	/*Plateau plateau = Plateau();
 	plateau.affiche();
 	Jeu partie = Jeu();
-	partie.launchGame(&plateau);
+	partie.launchGame(&plateau);*/
+	
+	//DEUXIEME SCENARIO : Prison
+	
+	/*Plateau plateau = Plateau();
+	Jeu partie = Jeu();
+	partie.lirePartie(&plateau);*/
+	
+	//TROISIEME ET QUATRIEME SCENARIO : Elimination et fin de partie
+	
+	/*Plateau plateau = Plateau();
+	Jeu partie = Jeu();
+	partie.lirePartie(&plateau);*/
+	
 	
 	//Jeu partie = Jeu();
 	//partie.lirePartie(&plateau);
