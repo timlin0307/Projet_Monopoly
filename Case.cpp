@@ -13,6 +13,8 @@ using namespace std;
 #include <typeinfo>
 
 #include "Terrain.h"
+#include "Gare.h"
+#include "Compagnie.h"
 
 Case::Case(string nom) {
 	this->nom = nom;
@@ -67,8 +69,9 @@ int Case::getNum() {
 
 void Case :: hypothequer (Joueur * j, Plateau *p)
 {
-
+	Compagnie cie_test = Compagnie();
 	Terrain ter_test = Terrain();
+	Gare gare_test = Gare();
 	int encore = 1;
 	cout << typeid(*(*p).getCase(1)).name() << endl;
 	while (encore)
@@ -84,15 +87,19 @@ void Case :: hypothequer (Joueur * j, Plateau *p)
 
 			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
 			{
-				Case* ter =(*p).getCase(i);
-				((Terrain*)ter)->ajout_hypotheque(j);
+				Case* gar =(*p).getCase(i);
+				((Gare*)gar)->ajout_hypotheque(j);
 				cout << "votre solde est de " << j->getSolde() << endl;
 			}
 
-
-
+			if (typeid(*(*p).getCase(i)) == typeid(cie_test) )
+			{
+				Case* cie =(*p).getCase(i);
+				((Compagnie*)cie)->ajout_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
 		}
-		cout << "voulez revoir vos cases pour voir celles que vous voulez hypothequer si oui tapez 1 sinon tapez 0 " << endl;
+		cout << "voulez vous revoir vos cases pour voir celles que vous voulez hypothequer si oui tapez 1 sinon tapez 0 " << endl;
 
 		cin >> encore ;
 	}
@@ -105,3 +112,94 @@ Case::Case()
 	this->suivante = nullptr;
 	this->numCase = 0;
 }
+
+
+
+
+void Case :: deshypothequer (Joueur * j, Plateau *p)
+{
+	Compagnie cie_test = Compagnie();
+	Terrain ter_test = Terrain();
+	Gare gare_test = Gare();
+	int encore = 1;
+	cout << typeid(*(*p).getCase(1)).name() << endl;
+	while (encore)
+	{
+		for (int i=1; i<40; i++ )
+		{
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->enleve_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* gar =(*p).getCase(i);
+				((Gare*)gar)->enleve_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+			if (typeid(*(*p).getCase(i)) == typeid(cie_test) )
+			{
+				Case* cie =(*p).getCase(i);
+				((Compagnie*)cie)->enleve_hypotheque(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+		}
+		cout << "voulez vous revoir vos cases pour voir celles que vous voulez deshypothequer si oui tapez 1 sinon tapez 0 " << endl;
+
+		cin >> encore ;
+	}
+}
+
+
+void Case :: revendre_maison (Joueur * j, Plateau *p)
+{
+	Terrain ter_test = Terrain();
+	int encore = 1;
+	while (encore)
+	{
+		for (int i=1; i<40; i++ )
+		{
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->moins_maison(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+
+		}
+		cout << "voulez vous revoir vos cases pour voir celles auxquelles vous pouvez enlever des maisons si oui tapez 1 sinon tapez 0 " << endl;
+
+		cin >> encore ;
+	}
+}
+
+
+
+void Case :: acheter_maison (Joueur * j, Plateau *p)
+{
+	Terrain ter_test = Terrain();
+	int encore = 1;
+	while (encore)
+	{
+		for (int i=1; i<40; i++ )
+		{
+			if (typeid(*(*p).getCase(i)) == typeid(ter_test) )
+			{
+				Case* ter =(*p).getCase(i);
+				((Terrain*)ter)->plus_maison(j);
+				cout << "votre solde est de " << j->getSolde() << endl;
+			}
+
+
+		}
+		cout << "voulez vous revoir vos cases pour voir celles auxquelles vous pouvez ajouter des maisons si oui tapez 1 sinon tapez 0 " << endl;
+
+		cin >> encore ;
+	}
+}
+

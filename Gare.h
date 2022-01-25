@@ -28,6 +28,9 @@ public :
 	Joueur * getJoueur();
 	void setJoueur(Joueur *);
 
+	void ajout_hypotheque(Joueur *);
+	void enleve_hypotheque(Joueur *);
+
 };
 
 

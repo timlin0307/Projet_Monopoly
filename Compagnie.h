@@ -23,10 +23,14 @@ protected :
 
 public :
 	Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, Joueur* appartient_a= nullptr, bool hypotheque = false);
+	Compagnie();
 	void arreterSur(Joueur*, int);
 	void calcul_loyer(int de);
 	Joueur * getJoueur();
 	void setJoueur(Joueur *);
+
+	void ajout_hypotheque(Joueur *);
+	void enleve_hypotheque(Joueur *);
 
 
 };

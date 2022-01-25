@@ -18,7 +18,7 @@ Gare ::Gare(string nomcase, int loyer, int prixachat, string nomjoueur, int valh
 
 void Gare :: arreterSur(Joueur* j, int de)
 {
-	if (nom_joueur == "")
+	if (appartient_a == nullptr)
 	{
 		cout << "la case n'appartient à personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
@@ -40,7 +40,7 @@ void Gare :: arreterSur(Joueur* j, int de)
 
 	else if (hypotheque == false )
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
 		this -> calcul_loyer();
 		int a_payer = loyer;
 		(*appartient_a).crediter(a_payer);
@@ -49,7 +49,7 @@ void Gare :: arreterSur(Joueur* j, int de)
 	}
 	else
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
 		cout << "elle est hypothéquée tu n'as rien a payé" << endl;
 	}
 }
@@ -75,3 +75,41 @@ Gare :: Gare()
 {
 	appartient_a=nullptr;
 }
+
+
+
+void Gare :: ajout_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() && !(this->getHypotheque()))
+					{
+						cout << "Voulez vous hypothequer ? " << this->getNom() << endl;
+						cout << "Vous empaucherez " << this->getvalhypo() << endl;
+						cout << "Si vous voulez hypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(true);
+							(*j).crediter(this->getvalhypo());
+						}
+					}
+}
+
+
+void Gare :: enleve_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() && (this->getHypotheque()))
+					{
+						cout << "Voulez vous deshypothequer ? " << this->getNom() << endl;
+						cout << "Vous débourserez " << ((this->getvalhypo())*1.1) << endl;
+						cout << "Si vous voulez deshypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(false);
+							(*j).debiter((this->getvalhypo())*1.1);
+						}
+					}
+}
+

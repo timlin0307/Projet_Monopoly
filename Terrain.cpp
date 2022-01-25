@@ -1,7 +1,7 @@
 /*
  * Terrain.cpp
  *
- *  Created on: 18 dÃ©c. 2021
+ *  Created on: 18 déc. 2021
  *      Author: lucas
  */
 
@@ -13,24 +13,23 @@ using namespace std;
 #include "Joueur.h"
 
 
-Terrain :: Terrain(string nomcase, int loyer, int prixachat,
-		   string nomjoueur, int valhypo, string couleur,
-		   int * list_loyer, int prix_maison, int nb_maisons,
-		   Joueur* jref, bool hypotheque)
-        : Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque ) {
-    this -> couleur = couleur;
-    this -> list_loyer = list_loyer;
-    this -> prix_maison = prix_maison;
-    this -> nb_maisons = nb_maisons;
-    this -> appartient_a = jref;
+Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
+		int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons, Joueur* jref, bool hypotheque)
+:Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
+{
+	this -> couleur = couleur;
+	this -> list_loyer = list_loyer;
+	this -> prix_maison = prix_maison;
+	this -> nb_maisons = nb_maisons;
+	this -> appartient_a = jref;
 }
 
 
 void Terrain :: arreterSur(Joueur* j, int de)
 {
-	if (nom_joueur == "")
+	if (appartient_a == nullptr)
 	{
-		cout << "la case n'appartient Ã  personne" << endl;
+		cout << "la case n'appartient à personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
 		cout << "votre solde de compte en banque est " << (*j).getSolde() << endl;
 		cout << "souhaitez vous l'acheter ?" << endl;
@@ -49,7 +48,7 @@ void Terrain :: arreterSur(Joueur* j, int de)
 
 	else if (hypotheque == false )
 	{
-		cout << "la case appartient Ã  " << nom_joueur << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
 		this -> calcul_loyer();
 		int a_payer = loyer;
 		(*appartient_a).crediter(a_payer);
@@ -58,8 +57,8 @@ void Terrain :: arreterSur(Joueur* j, int de)
 	}
 	else
 	{
-		cout << "la case appartient Ã  " << nom_joueur << endl;
-		cout << "elle est hypothÃ©quÃ©e tu n'as rien a payÃ©" << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
+		cout << "elle est hypothéquée tu n'as rien a payé" << endl;
 	}
 }
 
@@ -81,11 +80,15 @@ int Terrain :: get_NBmaisons()
 	return nb_maisons;
 }
 
+void Terrain :: set_NBmaisons(int n)
+{
+	nb_maisons=n;
+}
 
 void Terrain :: ajoute_maison()
 {
 	cout << "vous avez actuellement " << nb_maisons <<endl;
-	cout <<  "voulez-vous en racheter une ou plusieurs, sachaant que vous ne pouvez pas exceder 5 maisons qui est Ã©quivalent Ã  un hotel ?" << endl;
+	cout <<  "voulez-vous en racheter une ou plusieurs, sachaant que vous ne pouvez pas exceder 5 maisons qui est équivalent à un hotel ?" << endl;
 	int nb;
 	cin >> nb ;
 
@@ -125,7 +128,7 @@ void Terrain :: setJoueur(Joueur * j)
 }
 
 
-// rajout
+
 
 Terrain :: Terrain()
 :Propriete()
@@ -140,7 +143,7 @@ Terrain :: Terrain()
 
 void Terrain :: ajout_hypotheque(Joueur *j)
 {
-	if (j == this->getJoueur() & !(this->getHypotheque()))
+	if (j == this->getJoueur() && !(this->getHypotheque()))
 					{
 						cout << "Voulez vous hypothequer ? " << this->getNom() << endl;
 						cout << "Vous empaucherez " << this->getvalhypo() << endl;
@@ -156,3 +159,106 @@ void Terrain :: ajout_hypotheque(Joueur *j)
 }
 
 
+void Terrain :: enleve_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() && (this->getHypotheque()))
+					{
+						cout << "Voulez vous deshypothequer ? " << this->getNom() << endl;
+						cout << "Vous debourserez " << (this->getvalhypo())*1.1 << endl;
+						cout << "Si vous voulez deshypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(false);
+							(*j).debiter((this->getvalhypo())*1.1);
+						}
+					}
+}
+
+void Terrain :: moins_maison(Joueur * j)
+{
+	if (j == this->getJoueur() && ((this->get_NBmaisons()) != 0) )
+	{
+			cout << "vous avez actuellement " << this->get_NBmaisons() <<endl;
+			cout <<  "voulez-vous en revendre une ou plusieurs, sachant que vous ne pouvez pas avoir moins de 0 maisons ?" << endl;
+			cout << "Si vous ne voulez pas vendre de maisons tapez 0 sinon tapez le nombre de maisons que vous voulez vendre " << endl;
+			int nb;
+			cin >> nb ;
+
+			if (nb!=0)
+			{
+				int encore = 1;
+				while (encore)
+				{
+
+					try {
+						if ((this->get_NBmaisons())-nb >0)
+						{
+							throw (nb);
+						}
+						else
+						{
+							string except = "Vous ne pouvez pas enlever autant de maisons. Veuillez recommencer ";
+							throw (except);
+						}
+						}
+					catch (int nb) {
+					cout << "On va enlever " << nb << " maisons " << "\n" ;
+					(*appartient_a).crediter(nb*prix_maison /2);
+					this->set_NBmaisons( this->get_NBmaisons()  - nb);
+					cout << "votre nouveau solde de compte en banque est " << (*appartient_a).getSolde() << endl;
+					cout <<  "Vous avez maintenant " << (this->get_NBmaisons())-nb << " maisons " << endl;
+					encore = 0;
+					}
+					catch (string except) {
+					cout << except << "\n" ;
+					}
+				}
+			}
+	}
+
+}
+
+void Terrain :: plus_maison(Joueur * j)
+{
+	if (j == this->getJoueur() && ((this->get_NBmaisons()) <5) )
+	{
+		cout << "vous avez actuellement " << this->get_NBmaisons() <<endl;
+		cout <<  "voulez-vous en racheter une ou plusieurs, sachant que vous ne pouvez pas exceder 5 maisons qui est équivalent à un hotel ?" << endl;
+		cout << "Si vous ne voulez pas ajouter de maisons tapez 0 sinon tapez le nombre de maisons que vous voulez " << endl;
+		int nb;
+		cin >> nb ;
+
+		if (nb!=0)
+		{
+			int encore = 1;
+			while (encore)
+			{
+
+				try {
+					if (nb + nb_maisons <= 5)
+					{
+						throw (nb);
+					}
+					else
+					{
+						string except = "Vous ne pouvez pas construire autant de maisons. Veuillez recommencer ";
+						throw (except);
+					}
+					}
+				catch (int nb) {
+				cout << "On va rajouter " << nb << " maisons " << "\n" ;
+				(*appartient_a).debiter(nb*prix_maison);
+				this->set_NBmaisons(nb + this->get_NBmaisons());
+				cout << "votre nouveau solde de compte en banque est " << (*appartient_a).getSolde() << endl;
+				cout <<  "Vous avez maintenant " << this->get_NBmaisons() << " maisons " << endl;
+				encore = 0;
+				}
+				catch (string except) {
+				cout << except << "\n" ;
+				}
+			}
+		}
+	}
+}

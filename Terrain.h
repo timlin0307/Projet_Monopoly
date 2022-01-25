@@ -33,11 +33,15 @@ public :
 	void arreterSur(Joueur* j, int de);
 	void calcul_loyer();
 	int get_NBmaisons();
+	void set_NBmaisons(int);
 	void ajoute_maison();
 	Joueur * getJoueur();
 	void setJoueur(Joueur *);
 
 	void ajout_hypotheque(Joueur *);
+	void enleve_hypotheque(Joueur *);
+	void moins_maison(Joueur *);
+	void plus_maison(Joueur *);
 };
 
 

@@ -1,7 +1,7 @@
 /*
  * Case.h
  *
- *  Created on: 22 dÃ©c. 2021
+ *  Created on: 22 déc. 2021
  *      Author: neyre
  */
 
@@ -12,11 +12,11 @@
 using namespace std;
 
 class Case {
-    protected:
+protected:
 	string nom;
 	Case* suivante;
 	int numCase;
-    public:
+public:
 	Case(string);
 	Case();
 	virtual void arreterSur(Joueur*, int) ;
@@ -28,8 +28,11 @@ class Case {
 	Case* deplacement(Joueur*, int);
 	void setNum(int);
 	int getNum();
+
 	void hypothequer (Joueur *, Plateau *);
-	void revendre_maison ();
+	void deshypothequer (Joueur *, Plateau *);
+	void revendre_maison (Joueur *, Plateau *);
+	void acheter_maison (Joueur *, Plateau *);
 };
 
 

@@ -19,7 +19,7 @@ Compagnie ::Compagnie(string nomcase, int loyer, int prixachat, string nomjoueur
 
 void Compagnie :: arreterSur(Joueur* j, int de)
 {
-	if (nom_joueur == "")
+	if (appartient_a == nullptr)
 	{
 		cout << "la case n'appartient à personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
@@ -41,7 +41,7 @@ void Compagnie :: arreterSur(Joueur* j, int de)
 
 	else if (hypotheque == false )
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
 		this -> calcul_loyer(de);
 		int a_payer = loyer;
 		(*appartient_a).crediter(a_payer);
@@ -50,7 +50,7 @@ void Compagnie :: arreterSur(Joueur* j, int de)
 	}
 	else
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient à " << (*appartient_a).getNom() << endl;
 		cout << "elle est hypothéquée tu n'as rien a payé" << endl;
 	}
 }
@@ -76,4 +76,46 @@ Joueur * Compagnie :: getJoueur()
 void Compagnie :: setJoueur(Joueur * j)
 {
 	appartient_a = j;
+}
+
+
+Compagnie :: Compagnie()
+:Propriete()
+{
+	appartient_a = nullptr;
+}
+
+void Compagnie :: ajout_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() && !(this->getHypotheque()))
+					{
+						cout << "Voulez vous hypothequer ? " << this->getNom() << endl;
+						cout << "Vous empaucherez " << this->getvalhypo() << endl;
+						cout << "Si vous voulez hypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(true);
+							(*j).crediter(this->getvalhypo());
+						}
+					}
+}
+
+
+void Compagnie :: enleve_hypotheque(Joueur *j)
+{
+	if (j == this->getJoueur() && (this->getHypotheque()))
+					{
+						cout << "Voulez vous deshypothequer ? " << this->getNom() << endl;
+						cout << "Vous débourserez " << ((this->getvalhypo())*1.1) << endl;
+						cout << "Si vous voulez deshypothequer tapez 1 sinon tapez 0" << endl;
+						int hypo;
+						cin >> hypo;
+						if (hypo)
+						{
+							this->setHypotheque(false);
+							(*j).debiter((this->getvalhypo())*1.1);
+						}
+					}
 }
