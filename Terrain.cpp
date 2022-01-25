@@ -1,7 +1,7 @@
 /*
  * Terrain.cpp
  *
- *  Created on: 18 déc. 2021
+ *  Created on: 18 dÃ©c. 2021
  *      Author: lucas
  */
 
@@ -13,15 +13,14 @@ using namespace std;
 #include "Joueur.h"
 
 
-Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur,
-		int valhypo,string couleur, int * list_loyer, int prix_maison, int nb_maisons, Joueur* jref, bool hypotheque)
-:Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque )
-{
-	this -> couleur = couleur;
-	this -> list_loyer = list_loyer;
-	this -> prix_maison = prix_maison;
-	this -> nb_maisons = nb_maisons;
-	this -> appartient_a = jref;
+Terrain :: Terrain(string nomcase, int loyer, int prixachat, string nomjoueur, int valhypo, string couleur,
+		   int * list_loyer, int prix_maison, int nb_maisons, Joueur* jref, bool hypotheque)
+        : Propriete( nomcase, loyer, prixachat, nomjoueur, valhypo, hypotheque ) {
+    this -> couleur = couleur;
+    this -> list_loyer = list_loyer;
+    this -> prix_maison = prix_maison;
+    this -> nb_maisons = nb_maisons;
+    this -> appartient_a = jref;
 }
 
 
@@ -29,7 +28,7 @@ void Terrain :: arreterSur(Joueur* j, int de)
 {
 	if (nom_joueur == "")
 	{
-		cout << "la case n'appartient à personne" << endl;
+		cout << "la case n'appartient Ã  personne" << endl;
 		cout << "le prix d'achat est de " << prixAchat << endl;
 		cout << "votre solde de compte en banque est " << (*j).getSolde() << endl;
 		cout << "souhaitez vous l'acheter ?" << endl;
@@ -48,7 +47,7 @@ void Terrain :: arreterSur(Joueur* j, int de)
 
 	else if (hypotheque == false )
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
+		cout << "la case appartient Ã  " << nom_joueur << endl;
 		this -> calcul_loyer();
 		int a_payer = loyer;
 		(*appartient_a).crediter(a_payer);
@@ -57,8 +56,8 @@ void Terrain :: arreterSur(Joueur* j, int de)
 	}
 	else
 	{
-		cout << "la case appartient à " << nom_joueur << endl;
-		cout << "elle est hypothéquée tu n'as rien a payé" << endl;
+		cout << "la case appartient Ã  " << nom_joueur << endl;
+		cout << "elle est hypothÃ©quÃ©e tu n'as rien a payÃ©" << endl;
 	}
 }
 
@@ -84,7 +83,7 @@ int Terrain :: get_NBmaisons()
 void Terrain :: ajoute_maison()
 {
 	cout << "vous avez actuellement " << nb_maisons <<endl;
-	cout <<  "voulez-vous en racheter une ou plusieurs, sachaant que vous ne pouvez pas exceder 5 maisons qui est équivalent à un hotel ?" << endl;
+	cout <<  "voulez-vous en racheter une ou plusieurs, sachaant que vous ne pouvez pas exceder 5 maisons qui est Ã©quivalent Ã  un hotel ?" << endl;
 	int nb;
 	cin >> nb ;
 
