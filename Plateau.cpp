@@ -137,16 +137,17 @@ string* Plateau::lecture() {
 Plateau::Plateau() {
 	tete = nullptr;
 	string* tab = Plateau::lecture();
-	Case* premiere = new Case(tab[0]);
-	premiere->setSuivante(tete);
-	tete = premiere;
 	for (int i=0; i<40; i++) {
 		Plateau::ajouterCase(tab[i], 39-i);
 	}
-	premiere->setSuivante(tete);
+	Case* paix = getCase(39);
+	Case* dep = getCase(0);
+	paix->setSuivante(getCase(0));
+
 }
 
 void Plateau::affiche() {
+	cout << "Plateau de jeu :" << endl;
 	Case* courante = tete;
 	for (int i=0; i<40; i++) {
 		courante->affiche();
@@ -155,8 +156,8 @@ void Plateau::affiche() {
 }
 
 Case* Plateau::getCase(int i) {
-	Case* courante = tete->getSuivante();
-	for (int j=0; j<i-1; j++) {
+	Case* courante = tete;
+	for (int j=0; j<i; j++) {
 		courante = courante->getSuivante();
 	}
 	return courante;

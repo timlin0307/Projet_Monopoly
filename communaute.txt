@@ -1,16 +1,16 @@
-GAIN-20-Les Contributions vous remboursent
-LIBERE-Vous êtes libéré de prison
-ANNIVERSAIRE-C'est votre anniversaire
-PERTE-50-Payez la note du médecin
-PION-40-Placez vous sur la case Départ
-DILEMNE-Payez une amende ou bien tirez une carte Chance
-PION-1-Retournez à Belleville
-PION-30-Allez en prison
-GAIN-100-Recevez votre revenu annuel
-GAIN-10-Vous avez gagné le deuxième prix de beauté
-GAIN-100-Vous héritez
+GAIN-200-Erreur de la banque en votre faveur
 GAIN-50-La vente de votre stock vous rapporte
 PERTE-50-Payez votre police d'assurance
-GAIN-25-Recevez votre intérêt sur l'emprunt à  7%
-GAIN-200-Erreur de la banque en votre faveur
-PERTE-50-Payez à l'hôpital
+PION-1-Retournez à Belleville
+PION-30-Allez en prison
+GAIN-25-Recevez votre intérêt sur l'emprunt à  7%
+LIBERE-Vous êtes libéré de prison
+PERTE-50-Payez à l'hôpital
+GAIN-100-Vous héritez
+PERTE-50-Payez la note du médecin
+ANNIVERSAIRE-C'est votre anniversaire
+PION-40-Placez vous sur la case Départ
+GAIN-100-Recevez votre revenu annuel
+DILEMNE-Payez une amende ou bien tirez une carte Chance
+GAIN-10-Vous avez gagné le deuxième prix de beauté
+GAIN-20-Les Contributions vous remboursent

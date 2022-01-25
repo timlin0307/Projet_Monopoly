@@ -20,13 +20,21 @@ using namespace std;
 
 int main() {
 	
+	std::srand(std::time(nullptr));
+	
+	//PREMIER SCENARIO : Début de partie
+	
 	Plateau plateau = Plateau();
 	plateau.affiche();
-	
 	Jeu partie = Jeu();
 	partie.launchGame(&plateau);
 	
-	Case* departure = plateau.getCase(30);
+	//Jeu partie = Jeu();
+	//partie.lirePartie(&plateau);
+	//partie.afficheJoueurs();
+	//partie.launchGame(&plateau);
+	
+	/*Case* departure = plateau.getCase(10);
 	departure->affiche();
 	cout << typeid(*departure).name() << endl;
 	
@@ -36,10 +44,10 @@ int main() {
 	cout << j.getSolde() << endl;
 	Case* land = j.getCase();
 	cout << typeid(*land).name() << endl;
-	//(*land).sortir(&j);
+	((Prison*)land)->sortir(&j);
 	departure->deplacement(&j, 6);
 	
-	/*Communaute com = Communaute("Caisse de com", "communaute.txt");
+	Communaute com = Communaute("Caisse de com", "communaute.txt");
 	string s = com.piocher();
 	cout << s << endl;
 	
