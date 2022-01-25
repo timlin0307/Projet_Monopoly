@@ -8,24 +8,24 @@
 #include <string>
 #include "Case.h"
 #include "Prison.h"
-#include "Gobelet.h"
-#include "Joueur.h"
 
+#include "Joueur.h"
+#include "Gobelet.h"
 
 Prison::Prison(string nom):Case(nom) {
 	
 }
 
-int Prison :: sortir(Joueur *j) /* on retourne un int qui est la valeure du lancé si il a fait un double ou s'il a payé sinon c'est 0*/
-								/* du coup ne pas faire lancer le dé le tour de jeu se fera dans cette méthode*/
+int Prison :: sortir(Joueur *j)
+
 {
 	if ((*j).getPrison() == 0)
 	{
 		cout << " vous avez déja passé trois tours en prison vous devez payer 50 euros " << endl;
 		(*j).debiter(50);
 		(*j).setPrison(-1);
-		Gobelet g = Gobelet();
-		int dep = g.getValeur();
+		Gobelet g1 = Gobelet();
+		int dep = g1.getValeur();
 
 		return dep;
 		/*
@@ -99,6 +99,8 @@ int Prison :: sortir(Joueur *j) /* on retourne un int qui est la valeure du lanc
 				else
 				{
 					cout << "vous n'avez pas fait de double vous restez en prison " << endl;
+					(*j).setPrison((*j).getPrison() -1);
+
 					return 0;
 				}
 
